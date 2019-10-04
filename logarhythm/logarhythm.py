@@ -88,6 +88,12 @@ def short_repr(x):
     """
     This is the same as repr() except it limits the string to 35 characters.
     If the string is more than 35 characters long, this will print the first 16 and the last 16 characters separated by an ellipsis "...".
+
+    ```
+    >>> short_repr(list(range(1000))) == '[0, 1, 2, 3, 4, ..., 997, 998, 999]'
+    True
+
+    ```
     """
     s = repr(x)
     if s.startswith("u'") or s.startswith('u"'):
@@ -111,29 +117,19 @@ def build_format(time='hms',logger_name=True,process_name=False,thread_name=Fals
     Input valid values (first option listed is the default):
     
     - time = 'hms' | 'full' | 'elapsed_msec' | None
-
         - 'hms' = HH:MM:SS i.e. hour:minute:second within the current day
-
         - 'full' = yyyy-mm-dd/HH:MM:SS i.e. date + hour:minute:second
-
         - 'elapsed_msec' = Number of milliseconds elapsed since logging module was loaded
-        
         - None =  Do not include time
-
     - logger_name = True | False
-
         - Whether to include the logger name
     - process_name = False | True
-
         - Whether to include the process name (for multiprocessing)
     - thread_name = False | True
-
         - Whether to include the thread name (for multithreading)
-
     - level = True | False
-
         - Whether to include the level of the message
-
+    ```
     >>> import logarhythm
     >>> logger = logarhythm.getLogger()
     >>> logarhythm.build_format(time=None) == (u'[%(name)s :%(levelname)s] %(message)s', u'%H:%M:%S', u'%')
@@ -143,6 +139,8 @@ def build_format(time='hms',logger_name=True,process_name=False,thread_name=Fals
     True
     >>> build_format('elapsed_msec') == ('[%(relativeCreated)s %(name)s :%(levelname)s] %(message)s', '%H:%M:%S', '%')
     True
+
+    ```
     """
     format_pieces = []
     time_fmt = '%H:%M:%S'
@@ -220,6 +218,7 @@ def getLogger(name=None):
     """
     Returns the logarhythm logger with the given name
 
+    ```
     >>> Logger() is getLogger()
     True
     >>> getLogger() is getLogger(__name__)
@@ -230,6 +229,8 @@ def getLogger(name=None):
     True
     >>> Logger('.').child('doctest') is getLogger('.doctest')
     True
+    
+    ```
     """
     if name is None or name is '.':
         name = _caller_name()
@@ -256,6 +257,7 @@ def debug(msg,*args,**kwargs):
     Logs a message on the default logger (default = logger for \_\_name\_\_)
     
     See logging module for *args and **kwargs documentation.
+    ```
     >>> logger = getLogger()
     >>> with logger.use(doctest_mode=True,level=DEBUG):
     ...    debug('test') #uses same object named logger above, even though this is a module level function and not a Logger method
@@ -263,6 +265,8 @@ def debug(msg,*args,**kwargs):
     [logarhythm.logarhythm :DEBUG] test
     >>> logger.level
     0
+
+    ```
 
     """
     caller_frame_info = inspect.stack()[1]
@@ -275,11 +279,14 @@ def info(msg,*args,**kwargs):
     """
     Logs a message on the default logger (default = logger for \_\_name\_\_)
 
+    ```
     >>> logger = getLogger()
     >>> with logger.use(doctest_mode=True,level=DEBUG):
     ...    info('test') #uses same object named logger above, even though this is a module level function and not a Logger method
     ... 
     [logarhythm.logarhythm :INFO] test
+
+    ```
     """
     caller_frame_info = inspect.stack()[1]
     name = caller_frame_info[0].f_globals['__name__']
@@ -294,11 +301,14 @@ def warning(msg,*args,**kwargs):
 
     See logging module for *args and **kwargs documentation.
 
+    ```
     >>> logger = getLogger()
     >>> with logger.use(doctest_mode=True,level=DEBUG):
     ...    warning('test') #uses same object named logger above, even though this is a module level function and not a Logger method
     ... 
     [logarhythm.logarhythm :WARNING] test
+
+    ```
     """
     caller_frame_info = inspect.stack()[1]
     name = caller_frame_info[0].f_globals['__name__']
@@ -312,11 +322,14 @@ def error(msg,*args,**kwargs):
 
     See logging module for *args and **kwargs documentation.
 
+    ```
     >>> logger = getLogger()
     >>> with logger.use(doctest_mode=True,level=DEBUG):
     ...    error('test') #uses same object named logger above, even though this is a module level function and not a Logger method
     ... 
     [logarhythm.logarhythm :ERROR] test
+
+    ```
     """
     caller_frame_info = inspect.stack()[1]
     name = caller_frame_info[0].f_globals['__name__']
@@ -330,11 +343,14 @@ def critical(msg,*args,**kwargs):
 
     See logging module for *args and **kwargs documentation.
 
+    ```
     >>> logger = getLogger()
     >>> with logger.use(doctest_mode=True,level=DEBUG):
     ...    critical('test') #uses same object named logger above, even though this is a module level function and not a Logger method
     ... 
     [logarhythm.logarhythm :CRITICAL] test
+
+    ```
     """
     caller_frame_info = inspect.stack()[1]
     name = caller_frame_info[0].f_globals['__name__']
@@ -348,6 +364,8 @@ def exception(msg,*args,**kwargs):
 
     See logging module for *args and **kwargs documentation.
 
+
+    ```
     >>> logger = getLogger()
     >>> with logger.use(doctest_mode=True,level=DEBUG):
     ...    try:
@@ -361,6 +379,8 @@ def exception(msg,*args,**kwargs):
       File "<doctest logarhythm.logarhythm.exception[1]>", line 4, in <module>
         print(x[0])
     IndexError: list index out of range
+
+    ```
     """
     caller_frame_info = inspect.stack()[1]
     name = caller_frame_info[0].f_globals['__name__']
@@ -374,11 +394,14 @@ def log(level,msg,*args,**kwargs):
 
     See logging module for *args and **kwargs documentation.
 
+    ```
     >>> logger = getLogger()
     >>> with logger.use(doctest_mode=True,level=DEBUG):
     ...    log(DEBUG,'test') #uses same object named logger above, even though this is a module level function and not a Logger method
     ... 
     [logarhythm.logarhythm :DEBUG] test
+
+    ```
     """
     caller_frame_info = inspect.stack()[1]
     name = caller_frame_info[0].f_globals['__name__']
@@ -407,6 +430,12 @@ class GlobalSettings(object):
 
     @classmethod
     def set_auto_debug(klass,value):
+        """
+        When set to True, enter post-mortem pdb debug mode on unhandled exceptions.
+
+        >>> GlobalSettings.set_auto_debug(True) #auto debug enabled
+        >>> GlobalSettings.set_auto_debug(False) #auto debug disabled
+        """
         if value is True:
             klass.auto_debug_enabled = True 
             sys.excepthook = _auto_debug_handler
@@ -417,10 +446,13 @@ class GlobalSettings(object):
     @classmethod
     def set_end_interactive(klass,value):
         """
-        end_interactive = When True, enter interactive mode when script is done processing
+        When set to True, enter interactive mode when script is done processing
 
+        ```
         >>> GlobalSettings.set_end_interactive(True) #will cause interpreter to go to interactive mode when script stops running
         >>> GlobalSettings.set_end_interactive(False) #interpreter will terminate when script stops running
+
+        ```
         """
         if value is True:
             klass.end_interactive_enabled = True
@@ -450,8 +482,11 @@ class GlobalSettings(object):
 
         To restore the logging module to normal, call this function with disarm=False
 
+        ```
         >>> GlobalSettings.set_disarm_logging_module(False) #restores the original functions to the logging module
         >>> GlobalSettings.set_disarm_logging_module(True) #replaces the logging module functions with the logarhythm equivalents
+
+        ```
         """
         if value:
             klass.disarm_logging_module = True
@@ -657,6 +692,7 @@ class Logger(object):
         """
         Resets all logger settings to the default values then applies the provided keyword arguments to change attributes
 
+        ```
         >>> logger = Logger()
         >>> logger.stdout = True
         >>> logger.reinitialize(stderr=False)
@@ -665,6 +701,8 @@ class Logger(object):
         >>> logger.stderr #stderr default is True, but should be overwritten by keyword arg above
         False
         >>> logger.stderr = True
+
+        ```
         """
         name = self.name
         children = self.children
@@ -716,6 +754,8 @@ class Logger(object):
         """
         Sets attributes based on keyword arguments for this logger and all of its descendant loggers.
         Valid for the attributes listed in the Logger.set() method's documentation..
+
+        ```
         >>> logger = getLogger('doctest')
         >>> grandchild = getLogger('doctest.child.grandchild')
         >>> _=logger.set_all(level=DEBUG)
@@ -724,6 +764,8 @@ class Logger(object):
         >>> _=logger.set_all(level=NOTSET)
         >>> grandchild.level == NOTSET
         True
+
+        ```
         """ 
         for logger in self.walk():
             logger._set(**kwargs)
@@ -745,11 +787,15 @@ class Logger(object):
     def get_loggers(klass):
         """
         Returns a dictionary mapping all existing logger names to logger objects.
+
+        ```
         >>> logger = getLogger()
         >>> logger.name in Logger.get_loggers()
         True
         >>> root_logger.name in Logger.get_loggers()
         True
+
+        ```
         """
         return dict(klass._loggers)
 
@@ -759,6 +805,8 @@ class Logger(object):
 
         Positional and keyword arguments are passed into the Logger constructor.
 
+
+        ```
         >>> logger = Logger('doctest')
         >>> logger2 = root_logger.child('doctest')
         >>> logger is logger2 # shows that named loggers are children of the root logger
@@ -784,6 +832,8 @@ class Logger(object):
         >>> lower = unit1_logger.child('some.deep.logger')
         >>> print(lower.parent.name)
         doctest.subsys1.unit1.some.deep
+
+        ```
 
         """
         if self is self.root_logger:
@@ -921,6 +971,7 @@ class Logger(object):
         Registers a capture pattern to stop in debug mode when a logging message at the appropriate level matches the provided regular expression.
         Can also execute a custom callback to do some other action.
 
+        ```
         >>> logger = Logger('doctest') 
         >>> logger.capture('is 3')
         >>> logger.capture('some second pattern')
@@ -937,6 +988,8 @@ class Logger(object):
         [doctest :WARNING] ALL capture pattern triggered for 'is 3' at <doctest logarhythm.logarhythm.Logger.capture[3]> line 3
         [doctest :DEBUG] x is 4
         [doctest :DEBUG] x is 3
+
+        ```
 
         """
         regex = re.compile(pattern,flags)
@@ -985,6 +1038,12 @@ class Logger(object):
                         callback(self,caller_frame_info,m,_level)
     def will_log(self,level):
         """
+        This returns True if a message at the given level would end up getting logged.
+        This searches for a logger whose level is something other than NOTSET, starting at the current logger and going up the tree to parent loggers.
+        If it encounters a logger with an explicit level, it will return the comparison of the specified level to the level of the logger that was found.
+        If all loggers looked at have level=NOTSET, then it will return the comparison of the specified level to WARNING.
+
+        ```
         >>> logger = getLogger()
         >>> logger.will_log(DEBUG)
         False
@@ -996,6 +1055,8 @@ class Logger(object):
         True
         >>> logger.will_log(INFO)
         False
+
+        ```
         """
         target = self
         while target is not None:
@@ -1019,6 +1080,7 @@ class Logger(object):
         """
         Stops in debug mode when the provided condition is met.
 
+        ```
         >>> logger = Logger('doctest') 
         >>> with logger.use(doctest_mode=True):
         ...    for x in range(100):
@@ -1026,7 +1088,7 @@ class Logger(object):
         ... 
         [doctest :WARNING] Breakpoint triggered for Logger at <doctest logarhythm.logarhythm.Logger.breakpoint[1]> line 3
 
-
+        ```
         """
         if caller_frame_info is None:
             caller_frame_info = inspect.stack()[1]
@@ -1122,15 +1184,20 @@ class Logger(object):
         This is a shortcut attribute.
         It always evaluates to False.
         When set to True, it is a shortcut for:
-            .stderr = False
-            .stdout = True
-            .format = build_format(time=None)
-            .debugging_disabled = True
+
+        - .stderr = False
+        - .stdout = True
+        - .format = build_format(time=None)
+        - .debugging_disabled = True
+
+        ```
         >>> logger = getLogger('doctest')
         >>> with logger.use(doctest_mode=True):
         ...  logger.doctest_mode == False
         ... 
         True
+
+        ```
         """
         return False
     @doctest_mode.setter
@@ -1146,15 +1213,17 @@ class Logger(object):
         This is a shortcut attribute.
         It always evaluates to False.
         When set to True, it is a shortcut for:
-            .stderr = True
-            .stdout = False
-            .auto_debug = True
-            .level = DEBUG
-            .captures_disabled=False
-            .profiling_disabled=False
-            .monitoring_disabled = False
-            .debugging_disabled = False
 
+        - .stderr = True
+        - .stdout = False
+        - .auto_debug = True
+        - .level = DEBUG
+        - .captures_disabled=False
+        - .profiling_disabled=False
+        - .monitoring_disabled = False
+        - .debugging_disabled = False
+
+        ```
         >>> logger = getLogger('doctest')
         >>> with logger.use(dev_mode=True,stderr=False,stdout=True,format=build_format(time=None)):
         ...  logger.debug('debug')
@@ -1164,6 +1233,8 @@ class Logger(object):
         ...  logger.dev_mode == False
         ... 
         True
+
+        ```
         """
         return False
     @dev_mode.setter
@@ -1181,16 +1252,20 @@ class Logger(object):
         """
         This is a shortcut attribute.
         It always evaluates to False.
+
         When set to True, it is a shortcut for:
-            .stderr = True
-            .stdout = False
-            .auto_debug = False
-            .end_interactive_mode = False
-            .level = NOTSET
-            .captures_disabled = True
-            .profiling_disabled = True
-            .monitoring_disabled = True
-            .debugging_disabled = True
+
+        - .stderr = True
+        - .stdout = False
+        - .auto_debug = False
+        - .end_interactive_mode = False
+        - .level = NOTSET
+        - .captures_disabled = True
+        - .profiling_disabled = True
+        - .monitoring_disabled = True
+        - .debugging_disabled = True
+
+        ```
         >>> from time import sleep
         >>> logger = getLogger('doctest')
         >>> with logger.use(prod_mode=True,level=INFO):
@@ -1199,6 +1274,8 @@ class Logger(object):
         ...   sleep(0.1) 
         ... 
         False
+
+        ```
         """
         return False
     @prod_mode.setter
@@ -1215,6 +1292,11 @@ class Logger(object):
 
     @property
     def format(self):
+        """
+        This is a convenience property functionally equivalent to the set_format() method.
+        This should be set to a tuple value that will be used as an argument to set_format().
+        Once can assign this property to the value returned by the build_format() function.
+        """
         return (self._format_fmt,self._format_time_fmt,self._format_style)
     @format.setter
     def format(self,value):
@@ -1223,7 +1305,7 @@ class Logger(object):
     def set_format(self,fmt=None,time_fmt=None,style=None,handle=None):
         """
         Sets the formatting for handlers.
-        The first three arguments are the same as logging.
+        The first three arguments are the same as the logging module and are compatible with the output of the logarhythm.build_format() function.
 
         If handle is None - will apply to all existing handlers and to any that are created in the future.
 
@@ -1231,6 +1313,7 @@ class Logger(object):
 
         Otherwise, if handle is a FileHandle, StreamHandle, or SpecialHandle object, will apply to the associated handler
 
+        ```
         >>> logger = Logger('doctest')
         >>> with logger.use(stderr=False,stdout=True):
         ...    logger.set_format('%(levelname)s - %(msg)s')
@@ -1240,6 +1323,8 @@ class Logger(object):
         >>> with logger.use(doctest_mode=True,stdout=True):
         ...    logger.warning('bye')
         [doctest :WARNING] bye
+
+        ```
         """
         if fmt is None:
             fmt = self._format_fmt
@@ -1323,6 +1408,7 @@ class Logger(object):
         The StreamHandle object can be used as a context manager. When the context block ends, the logger will no longer
         log messages to the StreamHandle
 
+        ```
         >>> logger = Logger('doctest')
         >>> with logger.use(stdout=False,doctest_mode=True,level=DEBUG):
         ...    with logger.stream_open() as sh:
@@ -1331,6 +1417,8 @@ class Logger(object):
         ...
         >>> print(sh.getvalue().strip())
         [doctest :DEBUG] hello world
+
+        ```
 
         """
         if stream is None: #pragma: no cover
@@ -1348,6 +1436,7 @@ class Logger(object):
         Opens a file and starts logging messages to it.
         Returns a FileHandle object.
 
+        ```
         >>> logger = Logger('doctest')
         >>> with logger.use(stdout=False,doctest_mode=True):
         ...    with logger.file_open('test.log','w') as fh:
@@ -1359,7 +1448,7 @@ class Logger(object):
         [doctest :ERROR] this goes to the file
         >>> os.remove('test.log')
 
-        
+        ``` 
 
         """
         if path in self._file_handles:
@@ -1376,8 +1465,13 @@ class Logger(object):
 
     def handler_add(self,handler,use_logger_formatter=True):
         """
-        Add a handler as defined in the logging module.
+        Add a handler from the standard logging module to the logarhythm module. 
+        This can be used to provide the full flexibility of the standard logging module for special handlers like rotating file handlers, socket handlers, etc.
 
+        The optional parameter use_logger_formatter, when set to True will change the formatting of added handler to match the logarhythm logger's.
+        If set to False, then whatever formatter the provided handler was configured with will be used.
+
+        ```
         >>> sio = StringIO()
         >>> s = logging.StreamHandler(sio)
         >>> fh = logging.FileHandler('test_handler_add.log',mode='w')
@@ -1396,6 +1490,8 @@ class Logger(object):
         ... 
         test
         >>> os.remove('test_handler_add.log')
+
+        ```
         """
         sh = SpecialHandle(self,handler)
         if use_logger_formatter:
@@ -1434,6 +1530,7 @@ class Logger(object):
 
         To remove monitoring on an object, use the unmonitor() method.
 
+        ```
         >>> logger = getLogger('doctest')
         >>> class Bunch(object): pass
         ... 
@@ -1450,6 +1547,8 @@ class Logger(object):
         ... 
         [doctest :DEBUG] Monitored attribute set .x from 1 to 10
         [doctest :DEBUG] Monitored attribute set .y from 'this is a quite... will see below' to 'this is a quite...ariable changes' (label="watching y")
+
+        ```
         """
 
 
@@ -1509,29 +1608,35 @@ class Logger(object):
 
         To remove monitoring on an object, use the unmonitor() method.
 
+        ```
         >>> logger = getLogger('doctest')
         >>> logger2 = getLogger('doctest2')
-        >>> def f(x):
+        >>> def f(x): # test a pure function
         ...  return x**2
         ... 
         >>> class A(object):
-        ...  def __call__(self,x):
+        ...  def __call__(self,x): #test an instance with the __call__ method
         ...   return x**3
         ...  @classmethod
-        ...  def g(klass,x):
+        ...  def g(klass,x): #test a class method
         ...   return 5*x
         ...  @staticmethod
-        ...  def h(x):
+        ...  def h(x): #test a static method
         ...   return 30-x
+        >>> def c():
+        ...  w = 50
+        ...  def b(x): #test a function with a closure
+        ...   return w + x
+        ...  return b
         ... 
-        
+        >>> b = c()
         >>> a = A()
         >>> with logger.use(doctest_mode=True,level=DEBUG):
         ...  with logger2.use(doctest_mode=True,level=DEBUG):
         ...   logger.monitor_call(f)
-        ...   logger2.monitor_call(f) 
+        ...   logger2.monitor_call(f) # multiple loggers monitoring the same item
         ...   f(5)
-        ...   logger.unmonitor(f)
+        ...   logger.unmonitor(f) # unmonitoring for one logger does not effect the other logger
         ...   f(6)
         ...   logger2.unmonitor(f)
         ...   logger.monitor_call(f,label='watching f')
@@ -1554,6 +1659,13 @@ class Logger(object):
         ...   a(3)
         ...   a.g(3)
         ...   a.h(10)
+        ...   logger.monitor_call(b)
+        ...   logger2.monitor_call(b)
+        ...   b(29)
+        ...   logger.unmonitor(b)
+        ...   b(30)
+        ...   logger2.unmonitor(b)
+        ...   b(31)
         ... 
         [doctest :DEBUG] Monitored callable called f()
         [doctest2 :DEBUG] Monitored callable called f()
@@ -1574,19 +1686,32 @@ class Logger(object):
         27
         15
         20
+        [doctest :DEBUG] Monitored callable called b()
+        [doctest2 :DEBUG] Monitored callable called b()
+        79
+        [doctest2 :DEBUG] Monitored callable called b()
+        80
+        81
+
+        ```
         """
 
         #There are two distinct cases that require individual consideration.
-
         #Case 1: Pure function, static method, class method - monitor all calls to these functions
+        #Case 2: normal instance method or instance itsefl that has a call method- monitor calls only for the targeted bounded instance
+        #With case 1, we can modify the function itself because the change is desired for all calls to the function regardless of circumstance.
+        #With case 2, we want to modify the instance the method is bound to because monitoring is only for calls to that specific instance's method.
 
-        #Case 2: normal instance method - monitor calls only for the targeted bounded instance
+        #For case 1, we can change the behavior of the function by replacing its __code__ object. In order to do this, the closures and free variables of the new and old functions/code object must match. These variables cannot be directly constructed but need to be built by creating functions. The approach here is to construct a minial function that calls a Logger dispatch function with some minimal necessary identifying information to fulfill the logging/callback functionality without changing the input/output/side-effect behavior of the monitored function.
+
+        #For case 2, we can take a similar approach as monitor_attr() and change the class of the monitored object with the method of interest being overwritten.
+
 
         if self.monitoring_disabled:
             return
         logger = self
         if inspect.isfunction(target_callable) or (inspect.ismethod(target_callable) and inspect.isclass(target_callable.__self__)):
-            #pure function, static method, or class method
+            #Case 1: pure function, static method, or class method
             if inspect.ismethod(target_callable):
                 effective_target_callable = target_callable.__func__
                 orig_class = [klass for klass in inspect.getmro(target_callable.__self__) if not issubclass(klass,(MonitoredAttrItem,MonitoredMethItem))][0]
@@ -1603,16 +1728,20 @@ class Logger(object):
                         value = cell.cell_contents
                         closure_vars[name] = value
                 exec('''
-def monitored_func(*args,**kwargs):
-    closure_vars = [%s]
-    return Logger._monitor_func_dispatch(%d,*args,**kwargs)
-''' % (','.join(closure_vars.keys()),target_id),globals(),closure_vars)
+def closure({0:s}):
+    def monitored_func(*args,**kwargs):
+        closure_vars = [{0:s}]
+        return Logger._monitor_func_dispatch({1:d},*args,**kwargs)
+    return monitored_func
+monitored_func = closure({0:s})
+'''.format(','.join(closure_vars.keys()),target_id),globals(),closure_vars)
                 new_code = closure_vars['monitored_func'].__code__
                 effective_target_callable.__code__ = new_code
                 Logger._monitor_func_info[target_id] = [[],target_callable,effective_target_callable,callable_name,orig_code,new_code]
             Logger._monitor_func_info[target_id][0].append((logger,label,level,callback))
 
         elif inspect.ismethod(target_callable) or hasattr(target_callable,'__call__'):
+            #Case 2: Instance method or instance itself that has a __call__ method 
             if hasattr(target_callable,'__call__'):
                 target_callable = target_callable.__call__
             target = target_callable.__self__
@@ -1768,6 +1897,16 @@ def monitored_meth(self,*args,**kwargs):
         """
         Context manager for use with with statement.
         Will profile code within the corresponding with block and generate a log message with the profiling results.
+
+        ```
+        import logarhythm
+        logger = logarhythm.getLogger()
+        logger.level = logarhythm.INFO
+        with logger.profile():
+           do_some_slow_function()
+        #profiling results will be emitted as a logging message here
+        ```
+
         """
         do_it = not self.profiling_disabled and self.will_log(INFO)
         if do_it:
@@ -1786,6 +1925,7 @@ def monitored_meth(self,*args,**kwargs):
 
 if GlobalSettings._first_load:
     root_logger = Logger(name='')
+    root_logger.__doc__ = 'The root logger is the top-level logger in the logger tree. If all loggers have level=NOTSET, then changing the level of the root logger will effectively set the level of all loggers that exist in the python session.'
 
 class LoggingHandle(object):
     """
