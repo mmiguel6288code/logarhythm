@@ -1,5 +1,7 @@
 # logarhythm
 
+[View API documentation](http://htmlpreview.github.io/?https://github.com/mmiguel6288code/logarhythm/blob/master/docs/logarhythm/logarhythm.html)
+
 ## Goals
 The goals of this module are to:
 
