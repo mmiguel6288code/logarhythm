@@ -20,6 +20,7 @@ setup(
     version=version,
     description='',
     long_description=readme,
+    long_description_content_type='text/markdown',
     author='Matthew Miguel',
     author_email='mmiguel6288code@gmail.com',
     maintainer='Matthew Miguel',
