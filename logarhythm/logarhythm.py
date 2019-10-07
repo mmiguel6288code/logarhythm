@@ -21,7 +21,7 @@ if is_py2: #pragma: no cover
     from StringIO import StringIO
 elif is_py3: #pragma: no cover
     from io import StringIO
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 
 def parse_tlm(s,tlm_channel=None):
     """
@@ -1534,19 +1534,27 @@ class Logger(object):
         >>> logger = getLogger('doctest')
         >>> class Bunch(object): pass
         ... 
+        >>> def print_name_callback(logger,caller_frame_info,target,attr_name,old_value,new_value):
+        ...  print('__name__ = '+ caller_frame_info[0].f_globals['__name__'])
+        ... 
         >>> b = Bunch()
         >>> b.x = 1
         >>> b.y = 'this is a quite long string that will be summarized in some way that you will see below'
         >>> with logger.use(doctest_mode=True,level=DEBUG):
-        ...  logger.monitor_attr(b,'x')
+        ...  logger.monitor_attr(b,'x',callback=print_name_callback)
         ...  logger.monitor_attr(b,'y',label='watching y',callback=monitor_attr_debug_callback)
         ...  b.x = 10
         ...  b.y += ' after this variable changes'
+        ...  print(b.__class__.__name__)
         ...  logger.unmonitor(b)
+        ...  print(b.__class__.__name__)
         ...  b.x = 900
         ... 
         [doctest :DEBUG] Monitored attribute set .x from 1 to 10
+        __name__ = logarhythm.logarhythm
         [doctest :DEBUG] Monitored attribute set .y from 'this is a quite... will see below' to 'this is a quite...ariable changes' (label="watching y")
+        Bunch_mon
+        Bunch
 
         ```
         """
@@ -1611,6 +1619,9 @@ class Logger(object):
         ```
         >>> logger = getLogger('doctest')
         >>> logger2 = getLogger('doctest2')
+        >>> def print_name_callback(logger,caller_frame_info,target_callable,args,kwargs):
+        ...  print('__name__ = '+ caller_frame_info[0].f_globals['__name__'])
+        ... 
         >>> def f(x): # test a pure function
         ...  return x**2
         ... 
@@ -1633,33 +1644,36 @@ class Logger(object):
         >>> a = A()
         >>> with logger.use(doctest_mode=True,level=DEBUG):
         ...  with logger2.use(doctest_mode=True,level=DEBUG):
-        ...   logger.monitor_call(f)
+        ...   logger.monitor_call(f,callback=print_name_callback)
         ...   logger2.monitor_call(f) # multiple loggers monitoring the same item
         ...   f(5)
         ...   logger.unmonitor(f) # unmonitoring for one logger does not effect the other logger
         ...   f(6)
         ...   logger2.unmonitor(f)
-        ...   logger.monitor_call(f,label='watching f')
+        ...   logger.monitor_call(f,label='watching f',callback=print_name_callback)
         ...   f(7)
-        ...   logger.monitor_call(a,callback=monitor_call_debug_callback)
+        ...   logger.monitor_call(a,callback=print_name_callback)
         ...   logger2.monitor_call(a)
         ...   a(3)
-        ...   logger.monitor_call(a.g)
+        ...   logger.monitor_call(a.g,callback=print_name_callback)
         ...   logger2.monitor_call(a.g)
         ...   a.g(3)
-        ...   logger.monitor_call(a.h)
+        ...   logger.monitor_call(a.h,callback=print_name_callback)
         ...   logger2.monitor_call(a.h)
+        ...   print(a.__class__.__name__) #changed to A_mon because loggers are monitoring the instance
         ...   a.h(10)
         ...   logger.unmonitor(a)
         ...   logger.unmonitor(a.g)
         ...   logger.unmonitor(a.h)
+        ...   print(a.__class__.__name__) #still A_mon because logger2 monitoring the instance
         ...   logger2.unmonitor(a)
         ...   logger2.unmonitor(a.g)
         ...   logger2.unmonitor(a.h)
+        ...   print(a.__class__.__name__) #back to A since no logger is monitoring the instance anymore
         ...   a(3)
         ...   a.g(3)
         ...   a.h(10)
-        ...   logger.monitor_call(b)
+        ...   logger.monitor_call(b,callback=print_name_callback)
         ...   logger2.monitor_call(b)
         ...   b(29)
         ...   logger.unmonitor(b)
@@ -1668,25 +1682,34 @@ class Logger(object):
         ...   b(31)
         ... 
         [doctest :DEBUG] Monitored callable called f()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called f()
         25
         [doctest2 :DEBUG] Monitored callable called f()
         36
         [doctest :DEBUG] Monitored callable called f() (label="watching f")
+        __name__ = logarhythm.logarhythm
         49
         [doctest :DEBUG] Monitored callable called A.__call__()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called A.__call__()
         27
         [doctest :DEBUG] Monitored callable called A.g()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called A.g()
         15
+        A_mon
         [doctest :DEBUG] Monitored callable called h()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called h()
         20
+        A_mon
+        A
         27
         15
         20
         [doctest :DEBUG] Monitored callable called b()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called b()
         79
         [doctest2 :DEBUG] Monitored callable called b()
@@ -1731,7 +1754,8 @@ class Logger(object):
 def closure({0:s}):
     def monitored_func(*args,**kwargs):
         closure_vars = [{0:s}]
-        return Logger._monitor_func_dispatch({1:d},*args,**kwargs)
+        caller_frame_info = inspect.stack()[1]
+        return Logger._monitor_func_dispatch({1:d},caller_frame_info,*args,**kwargs)
     return monitored_func
 monitored_func = closure({0:s})
 '''.format(','.join(closure_vars.keys()),target_id),globals(),closure_vars)
@@ -1816,7 +1840,7 @@ def monitored_meth(self,*args,**kwargs):
 
 
     @staticmethod
-    def _monitor_func_dispatch(target_id,*args,**kwargs):
+    def _monitor_func_dispatch(target_id,caller_frame_info,*args,**kwargs):
         (entries,target_callable,effective_target_callable,callable_name,orig_code,new_code) = Logger._monitor_func_info[target_id]
         for (logger,label,level,callback) in entries:
             if logger.monitoring_disabled:
@@ -1827,7 +1851,6 @@ def monitored_meth(self,*args,**kwargs):
             else:
                 logger.log(level,'Monitored callable called %s() (label="%s")' % (callable_name,label))
             if callback is not None:
-                caller_frame_info = inspect.stack()[1]
                 callback(logger,caller_frame_info,target_callable,args,kwargs)
         effective_target_callable.__code__ = orig_code
         result = effective_target_callable(*args,**kwargs)
