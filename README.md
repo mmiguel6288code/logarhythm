@@ -27,21 +27,24 @@ logger.format = logarhtyhm.build_format(time='elapsed_msec',process_name=True,le
 #logging to a file
 with logger.file_open('/path/to/file.log'):
     logger.warning('goes to the file')
+```
+## Logger hierarchy and level Overview 
+1. Loggers have a level and messages have a level:
+  - CRITICAL = 50
+  - ERROR = 40
+  - WARNING = 30
+  - INFO = 20
+  - DEBUG = 10
+  - NOTSET = 0
+2. Loggers have a hierarchy with a root logger on top. 
+3. The root logger's level by default is WARNING. All other logger's levels by default are NOTSET.
+4. If a logger's level is NOTSET, it will pass the message to its parent logger unless it is the root logger.
+5. If the root logger's level is NOTSET, it will process any message it receives.
+6. If a logger's level is something other than NOTSET, it will process the message if the message's level is greater or equal to the logger's level. Otherwise it will discard the message.
 
-#logger hierarchy and level rules (logarhythm disables the confusing logging propagate property):
-#	(1) Loggers have a level and messages have a level:
-#		CRITICAL = 50
-#		ERROR = 40
-#		WARNING = 30
-#		INFO = 20
-#		DEBUG = 10
-#		NOTSET = 0
-#	(2) Loggers have a hierarchy with a root logger on top. 
-#	(3) The root logger's level by default is WARNING. All other logger's levels by default are NOTSET.
-#	(4) If a logger's level is NOTSET, it will pass the message to its parent logger unless it is the root logger.
-#	(5) If the root logger's level is NOTSET, it will process any message it receives.
-#	(6) If a logger's level is something other than NOTSET, it will process the message if the message's level is greater or equal to the logger's level. Otherwise it will discard the message.
-
+```
+import logarhtym
+from logarhtym.levels import * #imports logging level constants (i.e. CRITICAL, ERROR, WARNING, INFO, DEBUG, NOTSET)
 parent_logger = logarhythm.getLogger('parent') #initialized level = NOTSET
 child1_logger = logarhythm.getLogger('parent.child1') #initialized level = NOTSET
 child2_logger = parent_logger.child('child2') #parent.child2 #initialized level = NOTSET
