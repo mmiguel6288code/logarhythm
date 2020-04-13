@@ -21,7 +21,7 @@ if is_py2: #pragma: no cover
     from StringIO import StringIO
 elif is_py3: #pragma: no cover
     from io import StringIO
-__version__ = '1.0.3'
+__version__ = '1.0.4'
 
 def parse_tlm(s,tlm_channel=None):
     """

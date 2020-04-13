@@ -29,13 +29,16 @@ with logger.file_open('/path/to/file.log'):
     logger.warning('goes to the file')
 ```
 ## Logger Hierarchy and Level Overview 
-1. Loggers have a level and messages have a level:
+
+The following logging levels exist:
   - CRITICAL = 50
   - ERROR = 40
   - WARNING = 30
   - INFO = 20
   - DEBUG = 10
   - NOTSET = 0
+
+1. Loggers have a level and messages themselves have a level.
 2. Loggers have a hierarchy with a root logger on top. 
 3. The root logger's level by default is WARNING. All other logger's levels by default are NOTSET.
 4. If a logger's level is NOTSET, it will pass the message to its parent logger unless it is the root logger.
