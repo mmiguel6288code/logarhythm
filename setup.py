@@ -18,7 +18,7 @@ REQUIRES = []
 setup(
     name='logarhythm',
     version=version,
-    description='',
+    description='Simplified logging, debugging, and troubleshooting',
     long_description=readme,
     long_description_content_type='text/markdown',
     author='Matthew Miguel',
@@ -29,7 +29,7 @@ setup(
     license='MIT',
 
     keywords=[
-        'logging','debugging','telemetry','postmortem','autodebug','interactive','monitoring','profiling',
+        'logging','debugging','telemetry','postmortem','autodebug','interactive','monitoring','profiling','easier','log','simplified','logarhythm','logger','loggers',
     ],
 
     classifiers=[

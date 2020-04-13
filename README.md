@@ -9,6 +9,60 @@ The goals of this module are to:
 
 2. Provide some ways of using logging to support debugging, data collection (telemetry), and profiling
 
+## Usage
+```
+#imports
+import logarhythm
+from logarhtym.levels import * #imports logging level constants (i.e. CRITICAL, ERROR, WARNING, INFO, DEBUG, NOTSET)
+
+#basic logger usage for an importable module
+logger = logarhythm.getLogger() #corresponds to logging.getLogger(__name__)
+
+#basic logger configuration
+logger.stderr = False # turn off logging to stderr (it is on by default)
+logger.stdout = True # turn on logging to stdout (it is off by default)
+logger.format = logarhtyhm.build_format(time='elapsed_msec',process_name=True,level=False) #optional arguments: time is elapsed msec, process name is displayed, level is not displayed
+	#other optional arguments not mentioned are not changed 
+
+#logging to a file
+with logger.file_open('/path/to/file.log'):
+    logger.warning('goes to the file')
+
+#logger hierarchy and level rules (logarhythm disables the confusing logging propagate property):
+#	(1) Loggers have a level and messages have a level:
+#		CRITICAL = 50
+#		ERROR = 40
+#		WARNING = 30
+#		INFO = 20
+#		DEBUG = 10
+#		NOTSET = 0
+#	(2) Loggers have a hierarchy with a root logger on top. 
+#	(3) The root logger's level by default is WARNING. All other logger's levels by default are NOTSET.
+#	(4) If a logger's level is NOTSET, it will pass the message to its parent logger unless it is the root logger.
+#	(5) If the root logger's level is NOTSET, it will process any message it receives.
+#	(6) If a logger's level is something other than NOTSET, it will process the message if the message's level is greater or equal to the logger's level. Otherwise it will discard the message.
+
+parent_logger = logarhythm.getLogger('parent') #initialized level = NOTSET
+child1_logger = logarhythm.getLogger('parent.child1') #initialized level = NOTSET
+child2_logger = parent_logger.child('child2') #parent.child2 #initialized level = NOTSET
+
+parent_logger.level = DEBUG #parent and both children loggers will log every message at debug level or higher
+child1.info('this will show')
+
+child1_logger.level = CRITICAL
+child1.info('this will not show')
+child2.info('this will show')
+
+child1_logger.level = NOTSET
+child1_logger.level = NOTSET
+child1.info('this will not show')
+child2.info('this will not show')
+
+#root logger's level is WARNING by default
+child1.warning('this will show')
+
+```
+
 ## Logging Improvements
 
 ### The default logger should be __name__ not the root logger
