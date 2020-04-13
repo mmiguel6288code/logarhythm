@@ -9,7 +9,7 @@ The goals of this module are to:
 
 2. Provide some ways of using logging to support debugging, data collection (telemetry), and profiling
 
-## Usage
+## Basic Usage
 ```
 #imports
 import logarhythm
@@ -28,7 +28,7 @@ logger.format = logarhtyhm.build_format(time='elapsed_msec',process_name=True,le
 with logger.file_open('/path/to/file.log'):
     logger.warning('goes to the file')
 ```
-## Logger hierarchy and level Overview 
+## Logger Hierarchy and Level Overview 
 1. Loggers have a level and messages have a level:
   - CRITICAL = 50
   - ERROR = 40
