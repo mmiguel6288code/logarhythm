@@ -9,7 +9,22 @@ The goals of this module are to:
 
 2. Provide some ways of using logging to support debugging, data collection (telemetry), and profiling
 
-## Basic Usage
+
+## Minimal Example
+You are writing some code and you want to see something without doing tons of prints or looking at logger documentation.
+```python
+import logarhythm
+logger = logarhythm.get_logger()
+logger.level = logarhythm.DEBUG
+
+
+for x in big_loop():
+    logger.debug('x is %s' % repr(x))
+    do_something_with(x)
+
+```
+
+## Usage
 ```
 #imports
 import logarhythm
@@ -21,8 +36,9 @@ logger = logarhythm.getLogger() #corresponds to logging.getLogger(__name__)
 #basic logger configuration
 logger.stderr = False # turn off logging to stderr (it is on by default)
 logger.stdout = True # turn on logging to stdout (it is off by default)
-logger.format = logarhtyhm.build_format(time='elapsed_msec',process_name=True,level=False) #optional arguments: time is elapsed msec, process name is displayed, level is not displayed
-	#other optional arguments not mentioned are not changed 
+logger.format = logarhtyhm.build_format(time='elapsed_msec',process_name=True,level=False)
+    #optional arguments: time is elapsed msec, process name is displayed, level is not displayed
+    #other optional arguments not mentioned are not changed 
 
 #logging to a file
 with logger.file_open('/path/to/file.log'):

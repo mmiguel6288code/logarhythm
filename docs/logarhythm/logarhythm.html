@@ -3,15 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-<meta name="generator" content="pdoc 0.7.0" />
+<meta name="generator" content="pdoc 0.9.2" />
 <title>logarhythm.logarhythm API documentation</title>
 <meta name="description" content="" />
-<link href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' rel='stylesheet'>
-<link href='https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/8.0.0/sanitize.min.css' rel='stylesheet'>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" rel="stylesheet">
-<style>.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{font-weight:bold}#index h4 + ul{margin-bottom:.6em}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
-<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
 <style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
 </head>
 <body>
 <main>
@@ -47,7 +49,7 @@ if is_py2: #pragma: no cover
     from StringIO import StringIO
 elif is_py3: #pragma: no cover
     from io import StringIO
-__version__ = &#39;0.0.2&#39;
+__version__ = &#39;1.0.5&#39;
 
 def parse_tlm(s,tlm_channel=None):
     &#34;&#34;&#34;
@@ -261,6 +263,8 @@ def getLogger(name=None):
     if name is None or name is &#39;.&#39;:
         name = _caller_name()
     return Logger(name)
+
+get_logger = getLogger
 
 def getLogger_logging_module(name=None):
     &#34;&#34;&#34;
@@ -1560,19 +1564,27 @@ class Logger(object):
         &gt;&gt;&gt; logger = getLogger(&#39;doctest&#39;)
         &gt;&gt;&gt; class Bunch(object): pass
         ... 
+        &gt;&gt;&gt; def print_name_callback(logger,caller_frame_info,target,attr_name,old_value,new_value):
+        ...  print(&#39;__name__ = &#39;+ caller_frame_info[0].f_globals[&#39;__name__&#39;])
+        ... 
         &gt;&gt;&gt; b = Bunch()
         &gt;&gt;&gt; b.x = 1
         &gt;&gt;&gt; b.y = &#39;this is a quite long string that will be summarized in some way that you will see below&#39;
         &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
-        ...  logger.monitor_attr(b,&#39;x&#39;)
+        ...  logger.monitor_attr(b,&#39;x&#39;,callback=print_name_callback)
         ...  logger.monitor_attr(b,&#39;y&#39;,label=&#39;watching y&#39;,callback=monitor_attr_debug_callback)
         ...  b.x = 10
         ...  b.y += &#39; after this variable changes&#39;
+        ...  print(b.__class__.__name__)
         ...  logger.unmonitor(b)
+        ...  print(b.__class__.__name__)
         ...  b.x = 900
         ... 
         [doctest :DEBUG] Monitored attribute set .x from 1 to 10
+        __name__ = logarhythm.logarhythm
         [doctest :DEBUG] Monitored attribute set .y from &#39;this is a quite... will see below&#39; to &#39;this is a quite...ariable changes&#39; (label=&#34;watching y&#34;)
+        Bunch_mon
+        Bunch
 
         ```
         &#34;&#34;&#34;
@@ -1637,6 +1649,9 @@ class Logger(object):
         ```
         &gt;&gt;&gt; logger = getLogger(&#39;doctest&#39;)
         &gt;&gt;&gt; logger2 = getLogger(&#39;doctest2&#39;)
+        &gt;&gt;&gt; def print_name_callback(logger,caller_frame_info,target_callable,args,kwargs):
+        ...  print(&#39;__name__ = &#39;+ caller_frame_info[0].f_globals[&#39;__name__&#39;])
+        ... 
         &gt;&gt;&gt; def f(x): # test a pure function
         ...  return x**2
         ... 
@@ -1659,33 +1674,36 @@ class Logger(object):
         &gt;&gt;&gt; a = A()
         &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
         ...  with logger2.use(doctest_mode=True,level=DEBUG):
-        ...   logger.monitor_call(f)
+        ...   logger.monitor_call(f,callback=print_name_callback)
         ...   logger2.monitor_call(f) # multiple loggers monitoring the same item
         ...   f(5)
         ...   logger.unmonitor(f) # unmonitoring for one logger does not effect the other logger
         ...   f(6)
         ...   logger2.unmonitor(f)
-        ...   logger.monitor_call(f,label=&#39;watching f&#39;)
+        ...   logger.monitor_call(f,label=&#39;watching f&#39;,callback=print_name_callback)
         ...   f(7)
-        ...   logger.monitor_call(a,callback=monitor_call_debug_callback)
+        ...   logger.monitor_call(a,callback=print_name_callback)
         ...   logger2.monitor_call(a)
         ...   a(3)
-        ...   logger.monitor_call(a.g)
+        ...   logger.monitor_call(a.g,callback=print_name_callback)
         ...   logger2.monitor_call(a.g)
         ...   a.g(3)
-        ...   logger.monitor_call(a.h)
+        ...   logger.monitor_call(a.h,callback=print_name_callback)
         ...   logger2.monitor_call(a.h)
+        ...   print(a.__class__.__name__) #changed to A_mon because loggers are monitoring the instance
         ...   a.h(10)
         ...   logger.unmonitor(a)
         ...   logger.unmonitor(a.g)
         ...   logger.unmonitor(a.h)
+        ...   print(a.__class__.__name__) #still A_mon because logger2 monitoring the instance
         ...   logger2.unmonitor(a)
         ...   logger2.unmonitor(a.g)
         ...   logger2.unmonitor(a.h)
+        ...   print(a.__class__.__name__) #back to A since no logger is monitoring the instance anymore
         ...   a(3)
         ...   a.g(3)
         ...   a.h(10)
-        ...   logger.monitor_call(b)
+        ...   logger.monitor_call(b,callback=print_name_callback)
         ...   logger2.monitor_call(b)
         ...   b(29)
         ...   logger.unmonitor(b)
@@ -1694,25 +1712,34 @@ class Logger(object):
         ...   b(31)
         ... 
         [doctest :DEBUG] Monitored callable called f()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called f()
         25
         [doctest2 :DEBUG] Monitored callable called f()
         36
         [doctest :DEBUG] Monitored callable called f() (label=&#34;watching f&#34;)
+        __name__ = logarhythm.logarhythm
         49
         [doctest :DEBUG] Monitored callable called A.__call__()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called A.__call__()
         27
         [doctest :DEBUG] Monitored callable called A.g()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called A.g()
         15
+        A_mon
         [doctest :DEBUG] Monitored callable called h()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called h()
         20
+        A_mon
+        A
         27
         15
         20
         [doctest :DEBUG] Monitored callable called b()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called b()
         79
         [doctest2 :DEBUG] Monitored callable called b()
@@ -1757,7 +1784,8 @@ class Logger(object):
 def closure({0:s}):
     def monitored_func(*args,**kwargs):
         closure_vars = [{0:s}]
-        return Logger._monitor_func_dispatch({1:d},*args,**kwargs)
+        caller_frame_info = inspect.stack()[1]
+        return Logger._monitor_func_dispatch({1:d},caller_frame_info,*args,**kwargs)
     return monitored_func
 monitored_func = closure({0:s})
 &#39;&#39;&#39;.format(&#39;,&#39;.join(closure_vars.keys()),target_id),globals(),closure_vars)
@@ -1842,7 +1870,7 @@ def monitored_meth(self,*args,**kwargs):
 
 
     @staticmethod
-    def _monitor_func_dispatch(target_id,*args,**kwargs):
+    def _monitor_func_dispatch(target_id,caller_frame_info,*args,**kwargs):
         (entries,target_callable,effective_target_callable,callable_name,orig_code,new_code) = Logger._monitor_func_info[target_id]
         for (logger,label,level,callback) in entries:
             if logger.monitoring_disabled:
@@ -1853,7 +1881,6 @@ def monitored_meth(self,*args,**kwargs):
             else:
                 logger.log(level,&#39;Monitored callable called %s() (label=&#34;%s&#34;)&#39; % (callable_name,label))
             if callback is not None:
-                caller_frame_info = inspect.stack()[1]
                 callback(logger,caller_frame_info,target_callable,args,kwargs)
         effective_target_callable.__code__ = orig_code
         result = effective_target_callable(*args,**kwargs)
@@ -2054,7 +2081,7 @@ GlobalSettings._first_load = False</code></pre>
 <span>def <span class="ident">breakpoint</span></span>(<span>condition=True)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Same as getLogger().breakpoint(condition)</p></section>
+<div class="desc"><p>Same as getLogger().breakpoint(condition)</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2069,10 +2096,10 @@ GlobalSettings._first_load = False</code></pre>
 </details>
 </dd>
 <dt id="logarhythm.logarhythm.build_format"><code class="name flex">
-<span>def <span class="ident">build_format</span></span>(<span>time=&#39;hms&#39;, logger_name=True, process_name=False, thread_name=False, level=True)</span>
+<span>def <span class="ident">build_format</span></span>(<span>time='hms', logger_name=True, process_name=False, thread_name=False, level=True)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>This function tries to simplify generating logger formatting expressions, by determining the style and order.
+<div class="desc"><p>This function tries to simplify generating logger formatting expressions, by determining the style and order.
 The user just needs to specify what information they want to include.</p>
 <p>Input valid values (first option listed is the default):</p>
 <ul>
@@ -2111,7 +2138,7 @@ True
 &gt;&gt;&gt; build_format('elapsed_msec') == ('[%(relativeCreated)s %(name)s :%(levelname)s] %(message)s', '%H:%M:%S', '%')
 True
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2196,8 +2223,8 @@ True
 <span>def <span class="ident">capture_debug_callback</span></span>(<span>logger, caller_frame_info, match, level)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>This is the default callback for the Logger.capture() method.
-This results in debug mode being entered when a logged message matches the captured pattern.</p></section>
+<div class="desc"><p>This is the default callback for the Logger.capture() method.
+This results in debug mode being entered when a logged message matches the captured pattern.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2215,7 +2242,7 @@ This results in debug mode being entered when a logged message matches the captu
 <span>def <span class="ident">critical</span></span>(<span>msg, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Logs a message on the default logger (default = logger for __name__)</p>
+<div class="desc"><p>Logs a message on the default logger (default = logger for __name__)</p>
 <p>See logging module for <em>args and </em>*kwargs documentation.</p>
 <pre><code>&gt;&gt;&gt; logger = getLogger()
 &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
@@ -2223,7 +2250,7 @@ This results in debug mode being entered when a logged message matches the captu
 ... 
 [logarhythm.logarhythm :CRITICAL] test
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2254,7 +2281,7 @@ This results in debug mode being entered when a logged message matches the captu
 <span>def <span class="ident">debug</span></span>(<span>msg, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Logs a message on the default logger (default = logger for __name__)</p>
+<div class="desc"><p>Logs a message on the default logger (default = logger for __name__)</p>
 <p>See logging module for <em>args and </em>*kwargs documentation.</p>
 <pre><code>&gt;&gt;&gt; logger = getLogger()
 &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
@@ -2264,7 +2291,7 @@ This results in debug mode being entered when a logged message matches the captu
 &gt;&gt;&gt; logger.level
 0
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2297,7 +2324,7 @@ This results in debug mode being entered when a logged message matches the captu
 <span>def <span class="ident">error</span></span>(<span>msg, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Logs a message on the default logger (default = logger for __name__)</p>
+<div class="desc"><p>Logs a message on the default logger (default = logger for __name__)</p>
 <p>See logging module for <em>args and </em>*kwargs documentation.</p>
 <pre><code>&gt;&gt;&gt; logger = getLogger()
 &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
@@ -2305,7 +2332,7 @@ This results in debug mode being entered when a logged message matches the captu
 ... 
 [logarhythm.logarhythm :ERROR] test
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2336,7 +2363,7 @@ This results in debug mode being entered when a logged message matches the captu
 <span>def <span class="ident">exception</span></span>(<span>msg, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Logs a message on the default logger (default = logger for __name__)</p>
+<div class="desc"><p>Logs a message on the default logger (default = logger for __name__)</p>
 <p>See logging module for <em>args and </em>*kwargs documentation.</p>
 <pre><code>&gt;&gt;&gt; logger = getLogger()
 &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
@@ -2352,7 +2379,7 @@ Traceback (most recent call last):
     print(x[0])
 IndexError: list index out of range
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2392,7 +2419,7 @@ IndexError: list index out of range
 <span>def <span class="ident">getLogger</span></span>(<span>name=None)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Returns the logarhythm logger with the given name</p>
+<div class="desc"><p>Returns the logarhythm logger with the given name</p>
 <pre><code>&gt;&gt;&gt; Logger() is getLogger()
 True
 &gt;&gt;&gt; getLogger() is getLogger(__name__)
@@ -2404,7 +2431,7 @@ True
 &gt;&gt;&gt; Logger('.').child('doctest') is getLogger('.doctest')
 True
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2436,7 +2463,7 @@ True
 <span>def <span class="ident">getLogger_logging_module</span></span>(<span>name=None)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Returns a Logger as defined in the logging module but default name is __name__ instead of root</p></section>
+<div class="desc"><p>Returns a Logger as defined in the logging module but default name is __name__ instead of root</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2450,18 +2477,62 @@ True
     return original_getLogger(name)</code></pre>
 </details>
 </dd>
+<dt id="logarhythm.logarhythm.get_logger"><code class="name flex">
+<span>def <span class="ident">get_logger</span></span>(<span>name=None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Returns the logarhythm logger with the given name</p>
+<pre><code>&gt;&gt;&gt; Logger() is getLogger()
+True
+&gt;&gt;&gt; getLogger() is getLogger(__name__)
+True
+&gt;&gt;&gt; Logger() is getLogger('.')
+True
+&gt;&gt;&gt; Logger('.') is getLogger('.')
+True
+&gt;&gt;&gt; Logger('.').child('doctest') is getLogger('.doctest')
+True
+
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def getLogger(name=None):
+    &#34;&#34;&#34;
+    Returns the logarhythm logger with the given name
+
+    ```
+    &gt;&gt;&gt; Logger() is getLogger()
+    True
+    &gt;&gt;&gt; getLogger() is getLogger(__name__)
+    True
+    &gt;&gt;&gt; Logger() is getLogger(&#39;.&#39;)
+    True
+    &gt;&gt;&gt; Logger(&#39;.&#39;) is getLogger(&#39;.&#39;)
+    True
+    &gt;&gt;&gt; Logger(&#39;.&#39;).child(&#39;doctest&#39;) is getLogger(&#39;.doctest&#39;)
+    True
+    
+    ```
+    &#34;&#34;&#34;
+    if name is None or name is &#39;.&#39;:
+        name = _caller_name()
+    return Logger(name)</code></pre>
+</details>
+</dd>
 <dt id="logarhythm.logarhythm.info"><code class="name flex">
 <span>def <span class="ident">info</span></span>(<span>msg, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Logs a message on the default logger (default = logger for __name__)</p>
+<div class="desc"><p>Logs a message on the default logger (default = logger for __name__)</p>
 <pre><code>&gt;&gt;&gt; logger = getLogger()
 &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
 ...    info('test') #uses same object named logger above, even though this is a module level function and not a Logger method
 ... 
 [logarhythm.logarhythm :INFO] test
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2490,7 +2561,7 @@ True
 <span>def <span class="ident">log</span></span>(<span>level, msg, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Logs a message on the default logger (default = logger for __name__)</p>
+<div class="desc"><p>Logs a message on the default logger (default = logger for __name__)</p>
 <p>See logging module for <em>args and </em>*kwargs documentation.</p>
 <pre><code>&gt;&gt;&gt; logger = getLogger()
 &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
@@ -2498,7 +2569,7 @@ True
 ... 
 [logarhythm.logarhythm :DEBUG] test
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2529,8 +2600,8 @@ True
 <span>def <span class="ident">monitor_attr_debug_callback</span></span>(<span>logger, caller_frame_info, target, attr_name, old_value, new_value)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>This is an optional callback that can be used with the Logger.monitor_attr() method.
-If utilized, then changes to the monitored attribute will result in debug mode being entered.</p></section>
+<div class="desc"><p>This is an optional callback that can be used with the Logger.monitor_attr() method.
+If utilized, then changes to the monitored attribute will result in debug mode being entered.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2548,8 +2619,8 @@ If utilized, then changes to the monitored attribute will result in debug mode b
 <span>def <span class="ident">monitor_call_debug_callback</span></span>(<span>logger, caller_frame_info, target_callable, args, kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>This is an optional callback that can be used with the Logger.monitor_call() method.
-If utilized, then calling the monitored method will result in debug mode being entered.</p></section>
+<div class="desc"><p>This is an optional callback that can be used with the Logger.monitor_call() method.
+If utilized, then calling the monitored method will result in debug mode being entered.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2567,8 +2638,8 @@ If utilized, then calling the monitored method will result in debug mode being e
 <span>def <span class="ident">parse_tlm</span></span>(<span>s, tlm_channel=None)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>This function searches a string for telemetry log messages created by the logarhythm.tlm() function.
-All logged telemetry messages will be yielded as dictionaries mapping the original keyword arguments to their values.</p></section>
+<div class="desc"><p>This function searches a string for telemetry log messages created by the logarhythm.tlm() function.
+All logged telemetry messages will be yielded as dictionaries mapping the original keyword arguments to their values.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2593,10 +2664,10 @@ All logged telemetry messages will be yielded as dictionaries mapping the origin
 <span>def <span class="ident">set_auto_debug</span></span>(<span>value)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>When set to True, enter post-mortem pdb debug mode on unhandled exceptions.</p>
-<pre><code>&gt;&gt;&gt; GlobalSettings.set_auto_debug(True) #auto debug enabled
+<div class="desc"><p>When set to True, enter post-mortem pdb debug mode on unhandled exceptions.</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; GlobalSettings.set_auto_debug(True) #auto debug enabled
 &gt;&gt;&gt; GlobalSettings.set_auto_debug(False) #auto debug disabled
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2621,7 +2692,7 @@ def set_auto_debug(klass,value):
 <span>def <span class="ident">set_disarm_logging_module</span></span>(<span>value)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Monkey-patches the logging module to make the default behavior for module level functions to be to grab the module-level logger instead of the root logger.</p>
+<div class="desc"><p>Monkey-patches the logging module to make the default behavior for module level functions to be to grab the module-level logger instead of the root logger.</p>
 <p>This helps to prevent third party modules from broadcasting logging methods on the root logger by following the official basic logging instructions.</p>
 <p>Afffects the following functions:
 - debug
@@ -2637,7 +2708,7 @@ def set_auto_debug(klass,value):
 <pre><code>&gt;&gt;&gt; GlobalSettings.set_disarm_logging_module(False) #restores the original functions to the logging module
 &gt;&gt;&gt; GlobalSettings.set_disarm_logging_module(True) #replaces the logging module functions with the logarhythm equivalents
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2681,11 +2752,11 @@ def set_disarm_logging_module(klass,value):
 <span>def <span class="ident">set_end_interactive</span></span>(<span>value)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>When set to True, enter interactive mode when script is done processing</p>
+<div class="desc"><p>When set to True, enter interactive mode when script is done processing</p>
 <pre><code>&gt;&gt;&gt; GlobalSettings.set_end_interactive(True) #will cause interpreter to go to interactive mode when script stops running
 &gt;&gt;&gt; GlobalSettings.set_end_interactive(False) #interpreter will terminate when script stops running
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2714,12 +2785,12 @@ def set_end_interactive(klass,value):
 <span>def <span class="ident">short_repr</span></span>(<span>x)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>This is the same as repr() except it limits the string to 35 characters.
+<div class="desc"><p>This is the same as repr() except it limits the string to 35 characters.
 If the string is more than 35 characters long, this will print the first 16 and the last 16 characters separated by an ellipsis "&hellip;".</p>
 <pre><code>&gt;&gt;&gt; short_repr(list(range(1000))) == '[0, 1, 2, 3, 4, ..., 997, 998, 999]'
 True
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2748,12 +2819,12 @@ True
 <span>def <span class="ident">tlm</span></span>(<span>tlm_channel=None, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>This function produces a log message string to be passed into a logger method that captures parameter names and values based on the provided keyword arguments.
+<div class="desc"><p>This function produces a log message string to be passed into a logger method that captures parameter names and values based on the provided keyword arguments.
 The keyword arguments and values are encoded into JSON messages. Only values that can be encoded in JSON are allowed.
 Logfiles that contain messages generated from this function can be parsed using the parse_tlm() function to extract these telemetry records.</p>
 <p>The first parameter, tlm_channel is a special optional parameter that will be attached to the logged message.
 The parse_tlm function can be configured to only include messages matching a specified tlm_channel value.</p>
-<pre><code>&gt;&gt;&gt; logger = Logger('doctest')
+<pre><code class="language-python-repl">&gt;&gt;&gt; logger = Logger('doctest')
 &gt;&gt;&gt; with logger.use(stdout=False,doctest_mode=True,level=INFO):
 ...    with logger.stream_open() as sh:
 ...       logger.info(tlm('channel A',x=5,y=10))
@@ -2765,7 +2836,7 @@ The parse_tlm function can be configured to only include messages matching a spe
 True
 &gt;&gt;&gt; list(parse_tlm(sh.getvalue(),'channel A')) == [{'x':5,'y':10},{'x':9,'y':11}]
 True
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2815,7 +2886,7 @@ True
 <span>def <span class="ident">warning</span></span>(<span>msg, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Logs a message on the default logger (default = logger for <strong>name</strong>)</p>
+<div class="desc"><p>Logs a message on the default logger (default = logger for <strong>name</strong>)</p>
 <p>See logging module for <em>args and </em>*kwargs documentation.</p>
 <pre><code>&gt;&gt;&gt; logger = getLogger()
 &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
@@ -2823,7 +2894,7 @@ True
 ... 
 [logarhythm.logarhythm :WARNING] test
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2860,7 +2931,7 @@ True
 <span>(</span><span>logger, path, mode='a', encoding=None, delay=None)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>A handle that represents a file object which has logging messages written to it</p></section>
+<div class="desc"><p>A handle that represents a file object which has logging messages written to it</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2894,7 +2965,7 @@ True
 <span>def <span class="ident">close</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>When closed, the logger will no longer write to the file and the file itself will be closed.</p></section>
+<div class="desc"><p>When closed, the logger will no longer write to the file and the file itself will be closed.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -2912,10 +2983,9 @@ True
 </dd>
 <dt id="logarhythm.logarhythm.GlobalSettings"><code class="flex name class">
 <span>class <span class="ident">GlobalSettings</span></span>
-<span>(</span><span>*args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Manages global level settings</p></section>
+<div class="desc"><p>Manages global level settings</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3009,15 +3079,15 @@ True
 <dl>
 <dt id="logarhythm.logarhythm.GlobalSettings.auto_debug_enabled"><code class="name">var <span class="ident">auto_debug_enabled</span></code></dt>
 <dd>
-<section class="desc"><p>Whether or not unhandled exceptions will result in entering debug mode</p></section>
+<div class="desc"><p>Whether or not unhandled exceptions will result in entering debug mode</p></div>
 </dd>
 <dt id="logarhythm.logarhythm.GlobalSettings.disarm_logging_module"><code class="name">var <span class="ident">disarm_logging_module</span></code></dt>
 <dd>
-<section class="desc"><p>Whether or not the logging module functions are changed to use module level loggers instead of the root logger</p></section>
+<div class="desc"><p>Whether or not the logging module functions are changed to use module level loggers instead of the root logger</p></div>
 </dd>
 <dt id="logarhythm.logarhythm.GlobalSettings.end_interactive_enabled"><code class="name">var <span class="ident">end_interactive_enabled</span></code></dt>
 <dd>
-<section class="desc"><p>Whether or not the script will go into interactive mode when it finishes executing</p></section>
+<div class="desc"><p>Whether or not the script will go into interactive mode when it finishes executing</p></div>
 </dd>
 </dl>
 <h3>Static methods</h3>
@@ -3026,10 +3096,10 @@ True
 <span>def <span class="ident">set_auto_debug</span></span>(<span>value)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>When set to True, enter post-mortem pdb debug mode on unhandled exceptions.</p>
-<pre><code>&gt;&gt;&gt; GlobalSettings.set_auto_debug(True) #auto debug enabled
+<div class="desc"><p>When set to True, enter post-mortem pdb debug mode on unhandled exceptions.</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; GlobalSettings.set_auto_debug(True) #auto debug enabled
 &gt;&gt;&gt; GlobalSettings.set_auto_debug(False) #auto debug disabled
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3054,7 +3124,7 @@ def set_auto_debug(klass,value):
 <span>def <span class="ident">set_disarm_logging_module</span></span>(<span>value)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Monkey-patches the logging module to make the default behavior for module level functions to be to grab the module-level logger instead of the root logger.</p>
+<div class="desc"><p>Monkey-patches the logging module to make the default behavior for module level functions to be to grab the module-level logger instead of the root logger.</p>
 <p>This helps to prevent third party modules from broadcasting logging methods on the root logger by following the official basic logging instructions.</p>
 <p>Afffects the following functions:
 - debug
@@ -3070,7 +3140,7 @@ def set_auto_debug(klass,value):
 <pre><code>&gt;&gt;&gt; GlobalSettings.set_disarm_logging_module(False) #restores the original functions to the logging module
 &gt;&gt;&gt; GlobalSettings.set_disarm_logging_module(True) #replaces the logging module functions with the logarhythm equivalents
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3114,11 +3184,11 @@ def set_disarm_logging_module(klass,value):
 <span>def <span class="ident">set_end_interactive</span></span>(<span>value)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>When set to True, enter interactive mode when script is done processing</p>
+<div class="desc"><p>When set to True, enter interactive mode when script is done processing</p>
 <pre><code>&gt;&gt;&gt; GlobalSettings.set_end_interactive(True) #will cause interpreter to go to interactive mode when script stops running
 &gt;&gt;&gt; GlobalSettings.set_end_interactive(False) #interpreter will terminate when script stops running
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3150,7 +3220,7 @@ def set_end_interactive(klass,value):
 <span>(</span><span>*args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Base class for logarhythm specific Exceptions</p></section>
+<div class="desc"><p>Base class for logarhythm specific Exceptions</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -3172,7 +3242,7 @@ def set_end_interactive(klass,value):
 <span>(</span><span>name=None, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Primary class for logarhythm. All logarhythm functionalities can be accessed from this class.</p>
+<div class="desc"><p>Primary class for logarhythm. All logarhythm functionalities can be accessed from this class.</p>
 <p>When Logger objects are created, they will inherit the following attributes from their parent logger:
 stderr
 stdout
@@ -3181,7 +3251,7 @@ format_time_fmt
 format_style</p>
 <p>The root logger has no parent, and will have the following settings by default:
 stderr = True
-stdout = False</p></section>
+stdout = False</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -4211,19 +4281,27 @@ stdout = False</p></section>
         &gt;&gt;&gt; logger = getLogger(&#39;doctest&#39;)
         &gt;&gt;&gt; class Bunch(object): pass
         ... 
+        &gt;&gt;&gt; def print_name_callback(logger,caller_frame_info,target,attr_name,old_value,new_value):
+        ...  print(&#39;__name__ = &#39;+ caller_frame_info[0].f_globals[&#39;__name__&#39;])
+        ... 
         &gt;&gt;&gt; b = Bunch()
         &gt;&gt;&gt; b.x = 1
         &gt;&gt;&gt; b.y = &#39;this is a quite long string that will be summarized in some way that you will see below&#39;
         &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
-        ...  logger.monitor_attr(b,&#39;x&#39;)
+        ...  logger.monitor_attr(b,&#39;x&#39;,callback=print_name_callback)
         ...  logger.monitor_attr(b,&#39;y&#39;,label=&#39;watching y&#39;,callback=monitor_attr_debug_callback)
         ...  b.x = 10
         ...  b.y += &#39; after this variable changes&#39;
+        ...  print(b.__class__.__name__)
         ...  logger.unmonitor(b)
+        ...  print(b.__class__.__name__)
         ...  b.x = 900
         ... 
         [doctest :DEBUG] Monitored attribute set .x from 1 to 10
+        __name__ = logarhythm.logarhythm
         [doctest :DEBUG] Monitored attribute set .y from &#39;this is a quite... will see below&#39; to &#39;this is a quite...ariable changes&#39; (label=&#34;watching y&#34;)
+        Bunch_mon
+        Bunch
 
         ```
         &#34;&#34;&#34;
@@ -4288,6 +4366,9 @@ stdout = False</p></section>
         ```
         &gt;&gt;&gt; logger = getLogger(&#39;doctest&#39;)
         &gt;&gt;&gt; logger2 = getLogger(&#39;doctest2&#39;)
+        &gt;&gt;&gt; def print_name_callback(logger,caller_frame_info,target_callable,args,kwargs):
+        ...  print(&#39;__name__ = &#39;+ caller_frame_info[0].f_globals[&#39;__name__&#39;])
+        ... 
         &gt;&gt;&gt; def f(x): # test a pure function
         ...  return x**2
         ... 
@@ -4310,33 +4391,36 @@ stdout = False</p></section>
         &gt;&gt;&gt; a = A()
         &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
         ...  with logger2.use(doctest_mode=True,level=DEBUG):
-        ...   logger.monitor_call(f)
+        ...   logger.monitor_call(f,callback=print_name_callback)
         ...   logger2.monitor_call(f) # multiple loggers monitoring the same item
         ...   f(5)
         ...   logger.unmonitor(f) # unmonitoring for one logger does not effect the other logger
         ...   f(6)
         ...   logger2.unmonitor(f)
-        ...   logger.monitor_call(f,label=&#39;watching f&#39;)
+        ...   logger.monitor_call(f,label=&#39;watching f&#39;,callback=print_name_callback)
         ...   f(7)
-        ...   logger.monitor_call(a,callback=monitor_call_debug_callback)
+        ...   logger.monitor_call(a,callback=print_name_callback)
         ...   logger2.monitor_call(a)
         ...   a(3)
-        ...   logger.monitor_call(a.g)
+        ...   logger.monitor_call(a.g,callback=print_name_callback)
         ...   logger2.monitor_call(a.g)
         ...   a.g(3)
-        ...   logger.monitor_call(a.h)
+        ...   logger.monitor_call(a.h,callback=print_name_callback)
         ...   logger2.monitor_call(a.h)
+        ...   print(a.__class__.__name__) #changed to A_mon because loggers are monitoring the instance
         ...   a.h(10)
         ...   logger.unmonitor(a)
         ...   logger.unmonitor(a.g)
         ...   logger.unmonitor(a.h)
+        ...   print(a.__class__.__name__) #still A_mon because logger2 monitoring the instance
         ...   logger2.unmonitor(a)
         ...   logger2.unmonitor(a.g)
         ...   logger2.unmonitor(a.h)
+        ...   print(a.__class__.__name__) #back to A since no logger is monitoring the instance anymore
         ...   a(3)
         ...   a.g(3)
         ...   a.h(10)
-        ...   logger.monitor_call(b)
+        ...   logger.monitor_call(b,callback=print_name_callback)
         ...   logger2.monitor_call(b)
         ...   b(29)
         ...   logger.unmonitor(b)
@@ -4345,25 +4429,34 @@ stdout = False</p></section>
         ...   b(31)
         ... 
         [doctest :DEBUG] Monitored callable called f()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called f()
         25
         [doctest2 :DEBUG] Monitored callable called f()
         36
         [doctest :DEBUG] Monitored callable called f() (label=&#34;watching f&#34;)
+        __name__ = logarhythm.logarhythm
         49
         [doctest :DEBUG] Monitored callable called A.__call__()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called A.__call__()
         27
         [doctest :DEBUG] Monitored callable called A.g()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called A.g()
         15
+        A_mon
         [doctest :DEBUG] Monitored callable called h()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called h()
         20
+        A_mon
+        A
         27
         15
         20
         [doctest :DEBUG] Monitored callable called b()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called b()
         79
         [doctest2 :DEBUG] Monitored callable called b()
@@ -4408,7 +4501,8 @@ stdout = False</p></section>
 def closure({0:s}):
     def monitored_func(*args,**kwargs):
         closure_vars = [{0:s}]
-        return Logger._monitor_func_dispatch({1:d},*args,**kwargs)
+        caller_frame_info = inspect.stack()[1]
+        return Logger._monitor_func_dispatch({1:d},caller_frame_info,*args,**kwargs)
     return monitored_func
 monitored_func = closure({0:s})
 &#39;&#39;&#39;.format(&#39;,&#39;.join(closure_vars.keys()),target_id),globals(),closure_vars)
@@ -4493,7 +4587,7 @@ def monitored_meth(self,*args,**kwargs):
 
 
     @staticmethod
-    def _monitor_func_dispatch(target_id,*args,**kwargs):
+    def _monitor_func_dispatch(target_id,caller_frame_info,*args,**kwargs):
         (entries,target_callable,effective_target_callable,callable_name,orig_code,new_code) = Logger._monitor_func_info[target_id]
         for (logger,label,level,callback) in entries:
             if logger.monitoring_disabled:
@@ -4504,7 +4598,6 @@ def monitored_meth(self,*args,**kwargs):
             else:
                 logger.log(level,&#39;Monitored callable called %s() (label=&#34;%s&#34;)&#39; % (callable_name,label))
             if callback is not None:
-                caller_frame_info = inspect.stack()[1]
                 callback(logger,caller_frame_info,target_callable,args,kwargs)
         effective_target_callable.__code__ = orig_code
         result = effective_target_callable(*args,**kwargs)
@@ -4604,35 +4697,35 @@ def monitored_meth(self,*args,**kwargs):
 <dl>
 <dt id="logarhythm.logarhythm.Logger.CRITICAL"><code class="name">var <span class="ident">CRITICAL</span></code></dt>
 <dd>
-<section class="desc"><p>CRITICAL = 50</p></section>
+<div class="desc"><p>CRITICAL = 50</p></div>
 </dd>
 <dt id="logarhythm.logarhythm.Logger.DEBUG"><code class="name">var <span class="ident">DEBUG</span></code></dt>
 <dd>
-<section class="desc"><p>DEBUG = 10</p></section>
+<div class="desc"><p>DEBUG = 10</p></div>
 </dd>
 <dt id="logarhythm.logarhythm.Logger.ERROR"><code class="name">var <span class="ident">ERROR</span></code></dt>
 <dd>
-<section class="desc"><p>ERROR = 40</p></section>
+<div class="desc"><p>ERROR = 40</p></div>
 </dd>
 <dt id="logarhythm.logarhythm.Logger.INFO"><code class="name">var <span class="ident">INFO</span></code></dt>
 <dd>
-<section class="desc"><p>INFO = 20</p></section>
+<div class="desc"><p>INFO = 20</p></div>
 </dd>
 <dt id="logarhythm.logarhythm.Logger.NOTSET"><code class="name">var <span class="ident">NOTSET</span></code></dt>
 <dd>
-<section class="desc"><p>NOTSET = 0 - Implies a logger uses its parents level</p></section>
+<div class="desc"><p>NOTSET = 0 - Implies a logger uses its parents level</p></div>
 </dd>
 <dt id="logarhythm.logarhythm.Logger.OFF"><code class="name">var <span class="ident">OFF</span></code></dt>
 <dd>
-<section class="desc"><p>OFF = 60</p></section>
+<div class="desc"><p>OFF = 60</p></div>
 </dd>
 <dt id="logarhythm.logarhythm.Logger.WARNING"><code class="name">var <span class="ident">WARNING</span></code></dt>
 <dd>
-<section class="desc"><p>WARNING = 30</p></section>
+<div class="desc"><p>WARNING = 30</p></div>
 </dd>
 <dt id="logarhythm.logarhythm.Logger.root_logger"><code class="name">var <span class="ident">root_logger</span></code></dt>
 <dd>
-<section class="desc"><p>The root logger is the top-level logger in the logger tree. If all loggers have level=NOTSET, then changing the level of the root logger will effectively set the level of all loggers that exist in the python session.</p></section>
+<div class="desc"></div>
 </dd>
 </dl>
 <h3>Static methods</h3>
@@ -4641,14 +4734,14 @@ def monitored_meth(self,*args,**kwargs):
 <span>def <span class="ident">get_loggers</span></span>(<span>)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Returns a dictionary mapping all existing logger names to logger objects.</p>
+<div class="desc"><p>Returns a dictionary mapping all existing logger names to logger objects.</p>
 <pre><code>&gt;&gt;&gt; logger = getLogger()
 &gt;&gt;&gt; logger.name in Logger.get_loggers()
 True
 &gt;&gt;&gt; root_logger.name in Logger.get_loggers()
 True
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -4675,8 +4768,8 @@ def get_loggers(klass):
 <dl>
 <dt id="logarhythm.logarhythm.Logger.auto_debug"><code class="name">var <span class="ident">auto_debug</span></code></dt>
 <dd>
-<section class="desc"><p>Tied to the global flag for auto_debug. </p>
-<p>When True, unhandled exceptions will result in entering debug mode.</p></section>
+<div class="desc"><p>Tied to the global flag for auto_debug. </p>
+<p>When True, unhandled exceptions will result in entering debug mode.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -4694,7 +4787,7 @@ def auto_debug(self):
 </dd>
 <dt id="logarhythm.logarhythm.Logger.dev_mode"><code class="name">var <span class="ident">dev_mode</span></code></dt>
 <dd>
-<section class="desc"><p>This is a shortcut attribute.
+<div class="desc"><p>This is a shortcut attribute.
 It always evaluates to False.
 When set to True, it is a shortcut for:</p>
 <ul>
@@ -4717,7 +4810,7 @@ When set to True, it is a shortcut for:</p>
 ... 
 True
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -4756,8 +4849,8 @@ def dev_mode(self):
 </dd>
 <dt id="logarhythm.logarhythm.Logger.disarm_logging_module"><code class="name">var <span class="ident">disarm_logging_module</span></code></dt>
 <dd>
-<section class="desc"><p>Tied to the global flag for end_interactive.</p>
-<p>When True, the logging module will have its top level functions changed to use a module level logger by default instead of the root logger.</p></section>
+<div class="desc"><p>Tied to the global flag for end_interactive.</p>
+<p>When True, the logging module will have its top level functions changed to use a module level logger by default instead of the root logger.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -4774,7 +4867,7 @@ def disarm_logging_module(self):
 </dd>
 <dt id="logarhythm.logarhythm.Logger.doctest_mode"><code class="name">var <span class="ident">doctest_mode</span></code></dt>
 <dd>
-<section class="desc"><p>This is a shortcut attribute.
+<div class="desc"><p>This is a shortcut attribute.
 It always evaluates to False.
 When set to True, it is a shortcut for:</p>
 <ul>
@@ -4789,7 +4882,7 @@ When set to True, it is a shortcut for:</p>
 ... 
 True
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -4820,8 +4913,8 @@ def doctest_mode(self):
 </dd>
 <dt id="logarhythm.logarhythm.Logger.end_interactive"><code class="name">var <span class="ident">end_interactive</span></code></dt>
 <dd>
-<section class="desc"><p>Tied to the global flag for end_interactive.</p>
-<p>When True, the script will end in interactive mode.</p></section>
+<div class="desc"><p>Tied to the global flag for end_interactive.</p>
+<p>When True, the script will end in interactive mode.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -4838,9 +4931,9 @@ def end_interactive(self):
 </dd>
 <dt id="logarhythm.logarhythm.Logger.format"><code class="name">var <span class="ident">format</span></code></dt>
 <dd>
-<section class="desc"><p>This is a convenience property functionally equivalent to the set_format() method.
+<div class="desc"><p>This is a convenience property functionally equivalent to the set_format() method.
 This should be set to a tuple value that will be used as an argument to set_format().
-Once can assign this property to the value returned by the build_format() function.</p></section>
+Once can assign this property to the value returned by the build_format() function.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -4857,7 +4950,7 @@ def format(self):
 </dd>
 <dt id="logarhythm.logarhythm.Logger.level"><code class="name">var <span class="ident">level</span></code></dt>
 <dd>
-<section class="desc"><p>Will log messages with levels at or higher than the logger's level</p></section>
+<div class="desc"><p>Will log messages with levels at or higher than the logger's level</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -4872,7 +4965,7 @@ def level(self):
 </dd>
 <dt id="logarhythm.logarhythm.Logger.name"><code class="name">var <span class="ident">name</span></code></dt>
 <dd>
-<section class="desc"><p>The logger name</p></section>
+<div class="desc"><p>The logger name</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -4887,7 +4980,7 @@ def name(self):
 </dd>
 <dt id="logarhythm.logarhythm.Logger.prod_mode"><code class="name">var <span class="ident">prod_mode</span></code></dt>
 <dd>
-<section class="desc"><p>This is a shortcut attribute.
+<div class="desc"><p>This is a shortcut attribute.
 It always evaluates to False.</p>
 <p>When set to True, it is a shortcut for:</p>
 <ul>
@@ -4910,7 +5003,7 @@ It always evaluates to False.</p>
 ... 
 False
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -4950,7 +5043,7 @@ def prod_mode(self):
 </dd>
 <dt id="logarhythm.logarhythm.Logger.stderr"><code class="name">var <span class="ident">stderr</span></code></dt>
 <dd>
-<section class="desc"><p>When set to True, messages will be logged to stderr.</p></section>
+<div class="desc"><p>When set to True, messages will be logged to stderr.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -4965,7 +5058,7 @@ def stderr(self):
 </dd>
 <dt id="logarhythm.logarhythm.Logger.stdout"><code class="name">var <span class="ident">stdout</span></code></dt>
 <dd>
-<section class="desc"><p>When set to True, messages will be logged to stdout.</p></section>
+<div class="desc"><p>When set to True, messages will be logged to stdout.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -4985,7 +5078,7 @@ def stdout(self):
 <span>def <span class="ident">breakpoint</span></span>(<span>self, condition=True, caller_frame_info=None)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Stops in debug mode when the provided condition is met.</p>
+<div class="desc"><p>Stops in debug mode when the provided condition is met.</p>
 <pre><code>&gt;&gt;&gt; logger = Logger('doctest') 
 &gt;&gt;&gt; with logger.use(doctest_mode=True):
 ...    for x in range(100):
@@ -4993,7 +5086,7 @@ def stdout(self):
 ... 
 [doctest :WARNING] Breakpoint triggered for Logger at &lt;doctest logarhythm.logarhythm.Logger.breakpoint[1]&gt; line 3
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5029,7 +5122,7 @@ def stdout(self):
 <span>def <span class="ident">capture</span></span>(<span>self, pattern, flags=0, target_level=None, callback=&lt;function capture_debug_callback&gt;)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Registers a capture pattern to stop in debug mode when a logging message at the appropriate level matches the provided regular expression.
+<div class="desc"><p>Registers a capture pattern to stop in debug mode when a logging message at the appropriate level matches the provided regular expression.
 Can also execute a custom callback to do some other action.</p>
 <pre><code>&gt;&gt;&gt; logger = Logger('doctest') 
 &gt;&gt;&gt; logger.capture('is 3')
@@ -5048,7 +5141,7 @@ Can also execute a custom callback to do some other action.</p>
 [doctest :DEBUG] x is 4
 [doctest :DEBUG] x is 3
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5089,7 +5182,7 @@ Can also execute a custom callback to do some other action.</p>
 <span>def <span class="ident">child</span></span>(<span>self, child_name, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Returns a child logger given a relative name for the child.</p>
+<div class="desc"><p>Returns a child logger given a relative name for the child.</p>
 <p>Positional and keyword arguments are passed into the Logger constructor.</p>
 <pre><code>&gt;&gt;&gt; logger = Logger('doctest')
 &gt;&gt;&gt; logger2 = root_logger.child('doctest')
@@ -5108,19 +5201,16 @@ doctest.subsys1.unit1
 ... 
 [doctest.subsys1.unit2 :DEBUG] this shows because parent's level = DEBUG
 [doctest.subsys1.unit1 :DEBUG] same here
+&gt;&gt;&gt; unit1_logger.debug('this does not show because the parents level was set back to NOTSET')
+&gt;&gt;&gt; with unit1_logger.use(doctest_mode=True,level = INFO):
+...  unit1_logger.info('this does show')
+... 
+[doctest.subsys1.unit1 :INFO] this does show
+&gt;&gt;&gt; lower = unit1_logger.child('some.deep.logger')
+&gt;&gt;&gt; print(lower.parent.name)
+doctest.subsys1.unit1.some.deep
 
-    &gt;&gt;&gt; unit1_logger.debug('this does not show because the parents level was set back to NOTSET')
-    &gt;&gt;&gt; with unit1_logger.use(doctest_mode=True,level = INFO):
-    ...  unit1_logger.info('this does show')
-    ... 
-    [doctest.subsys1.unit1 :INFO] this does show
-    &gt;&gt;&gt; lower = unit1_logger.child('some.deep.logger')
-    &gt;&gt;&gt; print(lower.parent.name)
-    doctest.subsys1.unit1.some.deep
-
-
-
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5173,7 +5263,7 @@ doctest.subsys1.unit1
 <span>def <span class="ident">clear_captures</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Clears all capture patterns that were registered for this logger</p></section>
+<div class="desc"><p>Clears all capture patterns that were registered for this logger</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5189,7 +5279,7 @@ doctest.subsys1.unit1
 <span>def <span class="ident">critical</span></span>(<span>self, msg, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Logs a message at level CRITICAL. See logging documentation for args and kwargs information.</p></section>
+<div class="desc"><p>Logs a message at level CRITICAL. See logging documentation for args and kwargs information.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5214,7 +5304,7 @@ doctest.subsys1.unit1
 <span>def <span class="ident">debug</span></span>(<span>self, msg, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Logs a message at level DEBUG. See logging documentation for args and kwargs information.</p></section>
+<div class="desc"><p>Logs a message at level DEBUG. See logging documentation for args and kwargs information.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5239,7 +5329,7 @@ doctest.subsys1.unit1
 <span>def <span class="ident">error</span></span>(<span>self, msg, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Logs a message at level ERROR. See logging documentation for args and kwargs information.</p></section>
+<div class="desc"><p>Logs a message at level ERROR. See logging documentation for args and kwargs information.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5264,7 +5354,7 @@ doctest.subsys1.unit1
 <span>def <span class="ident">exception</span></span>(<span>self, msg, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Logs a message at level ERROR. See logging documentation for args and kwargs information.</p></section>
+<div class="desc"><p>Logs a message at level ERROR. See logging documentation for args and kwargs information.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5286,10 +5376,10 @@ doctest.subsys1.unit1
 </details>
 </dd>
 <dt id="logarhythm.logarhythm.Logger.file_open"><code class="name flex">
-<span>def <span class="ident">file_open</span></span>(<span>self, path, mode=&#39;a&#39;, encoding=None, delay=False)</span>
+<span>def <span class="ident">file_open</span></span>(<span>self, path, mode='a', encoding=None, delay=False)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Opens a file and starts logging messages to it.
+<div class="desc"><p>Opens a file and starts logging messages to it.
 Returns a FileHandle object.</p>
 <pre><code>&gt;&gt;&gt; logger = Logger('doctest')
 &gt;&gt;&gt; with logger.use(stdout=False,doctest_mode=True):
@@ -5302,7 +5392,7 @@ Returns a FileHandle object.</p>
 [doctest :ERROR] this goes to the file
 &gt;&gt;&gt; os.remove('test.log')
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5340,7 +5430,7 @@ Returns a FileHandle object.</p>
 <span>def <span class="ident">handler_add</span></span>(<span>self, handler, use_logger_formatter=True)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Add a handler from the standard logging module to the logarhythm module.
+<div class="desc"><p>Add a handler from the standard logging module to the logarhythm module.
 This can be used to provide the full flexibility of the standard logging module for special handlers like rotating file handlers, socket handlers, etc.</p>
 <p>The optional parameter use_logger_formatter, when set to True will change the formatting of added handler to match the logarhythm logger's.
 If set to False, then whatever formatter the provided handler was configured with will be used.</p>
@@ -5363,7 +5453,7 @@ If set to False, then whatever formatter the provided handler was configured wit
 test
 &gt;&gt;&gt; os.remove('test_handler_add.log')
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5412,7 +5502,7 @@ test
 <span>def <span class="ident">info</span></span>(<span>self, msg, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Logs a message at level INFO. See logging documentation for args and kwargs information.</p></section>
+<div class="desc"><p>Logs a message at level INFO. See logging documentation for args and kwargs information.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5437,7 +5527,7 @@ test
 <span>def <span class="ident">log</span></span>(<span>self, level, msg, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Logs a message at the specified level. See logging documentation for args and kwargs information.</p></section>
+<div class="desc"><p>Logs a message at the specified level. See logging documentation for args and kwargs information.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5468,7 +5558,7 @@ test
 <span>def <span class="ident">monitor_attr</span></span>(<span>self, target, attr_name=None, label=None, level=10, callback=None)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Monitors an object for attribute changes.
+<div class="desc"><p>Monitors an object for attribute changes.
 If attr_name is specified, only that attribute will be monitored.
 If attr_name is unspecified, all attributes that do not begin with "_" will be monitored for that object.</p>
 <p>When a change happens to a monitored attribute, a log message at the specified level will be generated.
@@ -5479,21 +5569,29 @@ The callback arguments match the monitor_attr_debug_callback() function - see th
 <pre><code>&gt;&gt;&gt; logger = getLogger('doctest')
 &gt;&gt;&gt; class Bunch(object): pass
 ... 
+&gt;&gt;&gt; def print_name_callback(logger,caller_frame_info,target,attr_name,old_value,new_value):
+...  print('__name__ = '+ caller_frame_info[0].f_globals['__name__'])
+... 
 &gt;&gt;&gt; b = Bunch()
 &gt;&gt;&gt; b.x = 1
 &gt;&gt;&gt; b.y = 'this is a quite long string that will be summarized in some way that you will see below'
 &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
-...  logger.monitor_attr(b,'x')
+...  logger.monitor_attr(b,'x',callback=print_name_callback)
 ...  logger.monitor_attr(b,'y',label='watching y',callback=monitor_attr_debug_callback)
 ...  b.x = 10
 ...  b.y += ' after this variable changes'
+...  print(b.__class__.__name__)
 ...  logger.unmonitor(b)
+...  print(b.__class__.__name__)
 ...  b.x = 900
 ... 
 [doctest :DEBUG] Monitored attribute set .x from 1 to 10
+__name__ = logarhythm.logarhythm
 [doctest :DEBUG] Monitored attribute set .y from 'this is a quite... will see below' to 'this is a quite...ariable changes' (label=&quot;watching y&quot;)
+Bunch_mon
+Bunch
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5515,19 +5613,27 @@ The callback arguments match the monitor_attr_debug_callback() function - see th
     &gt;&gt;&gt; logger = getLogger(&#39;doctest&#39;)
     &gt;&gt;&gt; class Bunch(object): pass
     ... 
+    &gt;&gt;&gt; def print_name_callback(logger,caller_frame_info,target,attr_name,old_value,new_value):
+    ...  print(&#39;__name__ = &#39;+ caller_frame_info[0].f_globals[&#39;__name__&#39;])
+    ... 
     &gt;&gt;&gt; b = Bunch()
     &gt;&gt;&gt; b.x = 1
     &gt;&gt;&gt; b.y = &#39;this is a quite long string that will be summarized in some way that you will see below&#39;
     &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
-    ...  logger.monitor_attr(b,&#39;x&#39;)
+    ...  logger.monitor_attr(b,&#39;x&#39;,callback=print_name_callback)
     ...  logger.monitor_attr(b,&#39;y&#39;,label=&#39;watching y&#39;,callback=monitor_attr_debug_callback)
     ...  b.x = 10
     ...  b.y += &#39; after this variable changes&#39;
+    ...  print(b.__class__.__name__)
     ...  logger.unmonitor(b)
+    ...  print(b.__class__.__name__)
     ...  b.x = 900
     ... 
     [doctest :DEBUG] Monitored attribute set .x from 1 to 10
+    __name__ = logarhythm.logarhythm
     [doctest :DEBUG] Monitored attribute set .y from &#39;this is a quite... will see below&#39; to &#39;this is a quite...ariable changes&#39; (label=&#34;watching y&#34;)
+    Bunch_mon
+    Bunch
 
     ```
     &#34;&#34;&#34;
@@ -5582,7 +5688,7 @@ The callback arguments match the monitor_attr_debug_callback() function - see th
 <span>def <span class="ident">monitor_call</span></span>(<span>self, target_callable, label=None, level=10, callback=None)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Monitors an callable object for calls.</p>
+<div class="desc"><p>Monitors an callable object for calls.</p>
 <p>When the monitored object is called, a log message at the specified level will be generated.
 If a label was specified, this label will be included in the log message.
 If a callback was specified, this callback will be called.
@@ -5590,6 +5696,9 @@ The callback arguments match the monitor_call_debug_callback() function - see th
 <p>To remove monitoring on an object, use the unmonitor() method.</p>
 <pre><code>&gt;&gt;&gt; logger = getLogger('doctest')
 &gt;&gt;&gt; logger2 = getLogger('doctest2')
+&gt;&gt;&gt; def print_name_callback(logger,caller_frame_info,target_callable,args,kwargs):
+...  print('__name__ = '+ caller_frame_info[0].f_globals['__name__'])
+... 
 &gt;&gt;&gt; def f(x): # test a pure function
 ...  return x**2
 ... 
@@ -5612,33 +5721,36 @@ The callback arguments match the monitor_call_debug_callback() function - see th
 &gt;&gt;&gt; a = A()
 &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
 ...  with logger2.use(doctest_mode=True,level=DEBUG):
-...   logger.monitor_call(f)
+...   logger.monitor_call(f,callback=print_name_callback)
 ...   logger2.monitor_call(f) # multiple loggers monitoring the same item
 ...   f(5)
 ...   logger.unmonitor(f) # unmonitoring for one logger does not effect the other logger
 ...   f(6)
 ...   logger2.unmonitor(f)
-...   logger.monitor_call(f,label='watching f')
+...   logger.monitor_call(f,label='watching f',callback=print_name_callback)
 ...   f(7)
-...   logger.monitor_call(a,callback=monitor_call_debug_callback)
+...   logger.monitor_call(a,callback=print_name_callback)
 ...   logger2.monitor_call(a)
 ...   a(3)
-...   logger.monitor_call(a.g)
+...   logger.monitor_call(a.g,callback=print_name_callback)
 ...   logger2.monitor_call(a.g)
 ...   a.g(3)
-...   logger.monitor_call(a.h)
+...   logger.monitor_call(a.h,callback=print_name_callback)
 ...   logger2.monitor_call(a.h)
+...   print(a.__class__.__name__) #changed to A_mon because loggers are monitoring the instance
 ...   a.h(10)
 ...   logger.unmonitor(a)
 ...   logger.unmonitor(a.g)
 ...   logger.unmonitor(a.h)
+...   print(a.__class__.__name__) #still A_mon because logger2 monitoring the instance
 ...   logger2.unmonitor(a)
 ...   logger2.unmonitor(a.g)
 ...   logger2.unmonitor(a.h)
+...   print(a.__class__.__name__) #back to A since no logger is monitoring the instance anymore
 ...   a(3)
 ...   a.g(3)
 ...   a.h(10)
-...   logger.monitor_call(b)
+...   logger.monitor_call(b,callback=print_name_callback)
 ...   logger2.monitor_call(b)
 ...   b(29)
 ...   logger.unmonitor(b)
@@ -5647,32 +5759,41 @@ The callback arguments match the monitor_call_debug_callback() function - see th
 ...   b(31)
 ... 
 [doctest :DEBUG] Monitored callable called f()
+__name__ = logarhythm.logarhythm
 [doctest2 :DEBUG] Monitored callable called f()
 25
 [doctest2 :DEBUG] Monitored callable called f()
 36
 [doctest :DEBUG] Monitored callable called f() (label=&quot;watching f&quot;)
+__name__ = logarhythm.logarhythm
 49
 [doctest :DEBUG] Monitored callable called A.__call__()
+__name__ = logarhythm.logarhythm
 [doctest2 :DEBUG] Monitored callable called A.__call__()
 27
 [doctest :DEBUG] Monitored callable called A.g()
+__name__ = logarhythm.logarhythm
 [doctest2 :DEBUG] Monitored callable called A.g()
 15
+A_mon
 [doctest :DEBUG] Monitored callable called h()
+__name__ = logarhythm.logarhythm
 [doctest2 :DEBUG] Monitored callable called h()
 20
+A_mon
+A
 27
 15
 20
 [doctest :DEBUG] Monitored callable called b()
+__name__ = logarhythm.logarhythm
 [doctest2 :DEBUG] Monitored callable called b()
 79
 [doctest2 :DEBUG] Monitored callable called b()
 80
 81
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5691,6 +5812,9 @@ The callback arguments match the monitor_call_debug_callback() function - see th
         ```
         &gt;&gt;&gt; logger = getLogger(&#39;doctest&#39;)
         &gt;&gt;&gt; logger2 = getLogger(&#39;doctest2&#39;)
+        &gt;&gt;&gt; def print_name_callback(logger,caller_frame_info,target_callable,args,kwargs):
+        ...  print(&#39;__name__ = &#39;+ caller_frame_info[0].f_globals[&#39;__name__&#39;])
+        ... 
         &gt;&gt;&gt; def f(x): # test a pure function
         ...  return x**2
         ... 
@@ -5713,33 +5837,36 @@ The callback arguments match the monitor_call_debug_callback() function - see th
         &gt;&gt;&gt; a = A()
         &gt;&gt;&gt; with logger.use(doctest_mode=True,level=DEBUG):
         ...  with logger2.use(doctest_mode=True,level=DEBUG):
-        ...   logger.monitor_call(f)
+        ...   logger.monitor_call(f,callback=print_name_callback)
         ...   logger2.monitor_call(f) # multiple loggers monitoring the same item
         ...   f(5)
         ...   logger.unmonitor(f) # unmonitoring for one logger does not effect the other logger
         ...   f(6)
         ...   logger2.unmonitor(f)
-        ...   logger.monitor_call(f,label=&#39;watching f&#39;)
+        ...   logger.monitor_call(f,label=&#39;watching f&#39;,callback=print_name_callback)
         ...   f(7)
-        ...   logger.monitor_call(a,callback=monitor_call_debug_callback)
+        ...   logger.monitor_call(a,callback=print_name_callback)
         ...   logger2.monitor_call(a)
         ...   a(3)
-        ...   logger.monitor_call(a.g)
+        ...   logger.monitor_call(a.g,callback=print_name_callback)
         ...   logger2.monitor_call(a.g)
         ...   a.g(3)
-        ...   logger.monitor_call(a.h)
+        ...   logger.monitor_call(a.h,callback=print_name_callback)
         ...   logger2.monitor_call(a.h)
+        ...   print(a.__class__.__name__) #changed to A_mon because loggers are monitoring the instance
         ...   a.h(10)
         ...   logger.unmonitor(a)
         ...   logger.unmonitor(a.g)
         ...   logger.unmonitor(a.h)
+        ...   print(a.__class__.__name__) #still A_mon because logger2 monitoring the instance
         ...   logger2.unmonitor(a)
         ...   logger2.unmonitor(a.g)
         ...   logger2.unmonitor(a.h)
+        ...   print(a.__class__.__name__) #back to A since no logger is monitoring the instance anymore
         ...   a(3)
         ...   a.g(3)
         ...   a.h(10)
-        ...   logger.monitor_call(b)
+        ...   logger.monitor_call(b,callback=print_name_callback)
         ...   logger2.monitor_call(b)
         ...   b(29)
         ...   logger.unmonitor(b)
@@ -5748,25 +5875,34 @@ The callback arguments match the monitor_call_debug_callback() function - see th
         ...   b(31)
         ... 
         [doctest :DEBUG] Monitored callable called f()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called f()
         25
         [doctest2 :DEBUG] Monitored callable called f()
         36
         [doctest :DEBUG] Monitored callable called f() (label=&#34;watching f&#34;)
+        __name__ = logarhythm.logarhythm
         49
         [doctest :DEBUG] Monitored callable called A.__call__()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called A.__call__()
         27
         [doctest :DEBUG] Monitored callable called A.g()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called A.g()
         15
+        A_mon
         [doctest :DEBUG] Monitored callable called h()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called h()
         20
+        A_mon
+        A
         27
         15
         20
         [doctest :DEBUG] Monitored callable called b()
+        __name__ = logarhythm.logarhythm
         [doctest2 :DEBUG] Monitored callable called b()
         79
         [doctest2 :DEBUG] Monitored callable called b()
@@ -5811,7 +5947,8 @@ The callback arguments match the monitor_call_debug_callback() function - see th
 def closure({0:s}):
     def monitored_func(*args,**kwargs):
         closure_vars = [{0:s}]
-        return Logger._monitor_func_dispatch({1:d},*args,**kwargs)
+        caller_frame_info = inspect.stack()[1]
+        return Logger._monitor_func_dispatch({1:d},caller_frame_info,*args,**kwargs)
     return monitored_func
 monitored_func = closure({0:s})
 &#39;&#39;&#39;.format(&#39;,&#39;.join(closure_vars.keys()),target_id),globals(),closure_vars)
@@ -5899,7 +6036,7 @@ def monitored_meth(self,*args,**kwargs):
 <span>def <span class="ident">profile</span></span>(<span>self, label=None, level=20)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Context manager for use with with statement.
+<div class="desc"><p>Context manager for use with with statement.
 Will profile code within the corresponding with block and generate a log message with the profiling results.</p>
 <pre><code>import logarhythm
 logger = logarhythm.getLogger()
@@ -5907,7 +6044,7 @@ logger.level = logarhythm.INFO
 with logger.profile():
    do_some_slow_function()
 #profiling results will be emitted as a logging message here
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5948,7 +6085,7 @@ def profile(self,label=None,level=INFO):
 <span>def <span class="ident">reinitialize</span></span>(<span>self, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Resets all logger settings to the default values then applies the provided keyword arguments to change attributes</p>
+<div class="desc"><p>Resets all logger settings to the default values then applies the provided keyword arguments to change attributes</p>
 <pre><code>&gt;&gt;&gt; logger = Logger()
 &gt;&gt;&gt; logger.stdout = True
 &gt;&gt;&gt; logger.reinitialize(stderr=False)
@@ -5958,7 +6095,7 @@ False
 False
 &gt;&gt;&gt; logger.stderr = True
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -5992,7 +6129,7 @@ False
 <span>def <span class="ident">set</span></span>(<span>self, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Sets attributes based on keyword arguments for this logger (for the lazy who want to write only one line)</p>
+<div class="desc"><p>Sets attributes based on keyword arguments for this logger (for the lazy who want to write only one line)</p>
 <p>Valid for the following attributes:
 auto_debug
 captures_disabled
@@ -6004,7 +6141,7 @@ level
 profiling_disabled
 monitoring_disabled
 stderr
-stdout</p></section>
+stdout</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6035,7 +6172,7 @@ stdout</p></section>
 <span>def <span class="ident">set_all</span></span>(<span>self, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Sets attributes based on keyword arguments for this logger and all of its descendant loggers.
+<div class="desc"><p>Sets attributes based on keyword arguments for this logger and all of its descendant loggers.
 Valid for the attributes listed in the Logger.set() method's documentation..</p>
 <pre><code>&gt;&gt;&gt; logger = getLogger('doctest')
 &gt;&gt;&gt; grandchild = getLogger('doctest.child.grandchild')
@@ -6046,7 +6183,7 @@ True
 &gt;&gt;&gt; grandchild.level == NOTSET
 True
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6077,7 +6214,7 @@ True
 <span>def <span class="ident">set_format</span></span>(<span>self, fmt=None, time_fmt=None, style=None, handle=None)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Sets the formatting for handlers.
+<div class="desc"><p>Sets the formatting for handlers.
 The first three arguments are the same as the logging module and are compatible with the output of the logarhythm.build_format() function.</p>
 <p>If handle is None - will apply to all existing handlers and to any that are created in the future.</p>
 <p>If handle == "stdout" or "stderr" will apply to one of those streams.</p>
@@ -6092,7 +6229,7 @@ WARNING - hi
 ...    logger.warning('bye')
 [doctest :WARNING] bye
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6158,7 +6295,7 @@ WARNING - hi
 <span>def <span class="ident">stream_open</span></span>(<span>self, stream=None)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Configures the logger to log to a StringIO object.
+<div class="desc"><p>Configures the logger to log to a StringIO object.
 If one is not provided a new one will be created.</p>
 <p>Returns a logarhythm.StreamHandle object.
 The StringIO object is present as the stream attribute of the StreamHandle object.
@@ -6174,7 +6311,7 @@ log messages to the StreamHandle</p>
 &gt;&gt;&gt; print(sh.getvalue().strip())
 [doctest :DEBUG] hello world
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6219,7 +6356,7 @@ log messages to the StreamHandle</p>
 <span>def <span class="ident">unmonitor</span></span>(<span>self, target)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Removes all monitoring on an object with respect to this logger for which monitor_attr() or monitor_call() was used on.</p></section>
+<div class="desc"><p>Removes all monitoring on an object with respect to this logger for which monitor_attr() or monitor_call() was used on.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6286,9 +6423,9 @@ log messages to the StreamHandle</p>
 <span>def <span class="ident">use</span></span>(<span>self, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Used in a with block.
+<div class="desc"><p>Used in a with block.
 Temporarily sets logger attributes based on keyword arguments, then sets them back at the end of the block.
-Valid for the attributes listed in the Logger.set() method's documentation.</p></section>
+Valid for the attributes listed in the Logger.set() method's documentation.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6310,7 +6447,7 @@ def use(self,**kwargs):
 <span>def <span class="ident">walk</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Iterates through this logger and all of its descendants (i.e. children, children's children, etc)</p></section>
+<div class="desc"><p>Iterates through this logger and all of its descendants (i.e. children, children's children, etc)</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6329,7 +6466,7 @@ def use(self,**kwargs):
 <span>def <span class="ident">warning</span></span>(<span>self, msg, *args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Logs a message at level WARNING. See logging documentation for args and kwargs information.</p></section>
+<div class="desc"><p>Logs a message at level WARNING. See logging documentation for args and kwargs information.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6354,7 +6491,7 @@ def use(self,**kwargs):
 <span>def <span class="ident">will_log</span></span>(<span>self, level)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>This returns True if a message at the given level would end up getting logged.
+<div class="desc"><p>This returns True if a message at the given level would end up getting logged.
 This searches for a logger whose level is something other than NOTSET, starting at the current logger and going up the tree to parent loggers.
 If it encounters a logger with an explicit level, it will return the comparison of the specified level to the level of the logger that was found.
 If all loggers looked at have level=NOTSET, then it will return the comparison of the specified level to WARNING.</p>
@@ -6370,7 +6507,7 @@ True
 &gt;&gt;&gt; logger.will_log(INFO)
 False
 
-</code></pre></section>
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6422,7 +6559,7 @@ False
 <span>(</span><span>logger)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Base class for logging handles (controlling a message output target like a file)</p></section>
+<div class="desc"><p>Base class for logging handles (controlling a message output target like a file)</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6445,9 +6582,9 @@ False
 </details>
 <h3>Subclasses</h3>
 <ul class="hlist">
+<li><a title="logarhythm.logarhythm.FileHandle" href="#logarhythm.logarhythm.FileHandle">FileHandle</a></li>
 <li><a title="logarhythm.logarhythm.SpecialHandle" href="#logarhythm.logarhythm.SpecialHandle">SpecialHandle</a></li>
 <li><a title="logarhythm.logarhythm.StreamHandle" href="#logarhythm.logarhythm.StreamHandle">StreamHandle</a></li>
-<li><a title="logarhythm.logarhythm.FileHandle" href="#logarhythm.logarhythm.FileHandle">FileHandle</a></li>
 </ul>
 <h3>Methods</h3>
 <dl>
@@ -6455,7 +6592,7 @@ False
 <span>def <span class="ident">close</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Base class method to be overridden by subclasses</p></section>
+<div class="desc"><p>Base class method to be overridden by subclasses</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6469,10 +6606,9 @@ False
 </dd>
 <dt id="logarhythm.logarhythm.MonitoredAttrItem"><code class="flex name class">
 <span>class <span class="ident">MonitoredAttrItem</span></span>
-<span>(</span><span>*args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Base class to indicate that an object has had monitor_attr() called on it.</p></section>
+<div class="desc"><p>Base class to indicate that an object has had monitor_attr() called on it.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6486,10 +6622,9 @@ False
 </dd>
 <dt id="logarhythm.logarhythm.MonitoredMethItem"><code class="flex name class">
 <span>class <span class="ident">MonitoredMethItem</span></span>
-<span>(</span><span>*args, **kwargs)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Base class to indicate that an object has had monitor_call() called on one of its methods</p></section>
+<div class="desc"><p>Base class to indicate that an object has had monitor_call() called on one of its methods</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6505,7 +6640,7 @@ False
 <span>(</span><span>logger, handler)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>The result of calling logger.handler_add() with some logging module handler</p></section>
+<div class="desc"><p>The result of calling logger.handler_add() with some logging module handler</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6539,7 +6674,7 @@ False
 <span>def <span class="ident">close</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>When closed, the logger will no longer write to this handler.</p></section>
+<div class="desc"><p>When closed, the logger will no longer write to this handler.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6562,7 +6697,7 @@ False
 <span>(</span><span>logger, stream)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>A handle that represents a StringIO object which has logging messages being written to it</p></section>
+<div class="desc"><p>A handle that represents a StringIO object which has logging messages being written to it</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6602,8 +6737,8 @@ False
 <span>def <span class="ident">close</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>When closed, the logger will no longer write to this stream.</p>
-<p>The underlying StringIO object is not closed/destroyed.</p></section>
+<div class="desc"><p>When closed, the logger will no longer write to this stream.</p>
+<p>The underlying StringIO object is not closed/destroyed.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6623,7 +6758,7 @@ False
 <span>def <span class="ident">getvalue</span></span>(<span>self)</span>
 </code></dt>
 <dd>
-<section class="desc"><p>Returns the string data in the underlying StringIO object.</p></section>
+<div class="desc"><p>Returns the string data in the underlying StringIO object.</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -6662,6 +6797,7 @@ False
 <li><code><a title="logarhythm.logarhythm.exception" href="#logarhythm.logarhythm.exception">exception</a></code></li>
 <li><code><a title="logarhythm.logarhythm.getLogger" href="#logarhythm.logarhythm.getLogger">getLogger</a></code></li>
 <li><code><a title="logarhythm.logarhythm.getLogger_logging_module" href="#logarhythm.logarhythm.getLogger_logging_module">getLogger_logging_module</a></code></li>
+<li><code><a title="logarhythm.logarhythm.get_logger" href="#logarhythm.logarhythm.get_logger">get_logger</a></code></li>
 <li><code><a title="logarhythm.logarhythm.info" href="#logarhythm.logarhythm.info">info</a></code></li>
 <li><code><a title="logarhythm.logarhythm.log" href="#logarhythm.logarhythm.log">log</a></code></li>
 <li><code><a title="logarhythm.logarhythm.monitor_attr_debug_callback" href="#logarhythm.logarhythm.monitor_attr_debug_callback">monitor_attr_debug_callback</a></code></li>
@@ -6778,9 +6914,7 @@ False
 </nav>
 </main>
 <footer id="footer">
-<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.7.0</a>.</p>
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad()</script>
 </body>
 </html>

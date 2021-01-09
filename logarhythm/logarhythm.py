@@ -21,7 +21,7 @@ if is_py2: #pragma: no cover
     from StringIO import StringIO
 elif is_py3: #pragma: no cover
     from io import StringIO
-__version__ = '1.0.4'
+__version__ = '1.0.5'
 
 def parse_tlm(s,tlm_channel=None):
     """
@@ -235,6 +235,8 @@ def getLogger(name=None):
     if name is None or name is '.':
         name = _caller_name()
     return Logger(name)
+
+get_logger = getLogger
 
 def getLogger_logging_module(name=None):
     """
